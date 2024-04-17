@@ -1,0 +1,261 @@
+// Breadcrumbs
+section.breadcrumbs {
+  margin: 0;
+  padding: 15px 0;
+  background: #F0F1F5;
+  margin-bottom: 40px;
+  font: $normal 1.6rem/2.2rem $regular;
+  text-transform: none;
+  letter-spacing: 0px;
+}
+
+section.breadcrumbs + section.content_section {
+  padding: 0 0 $padding 0;
+}
+
+// Stat Section
+.stat_section, .home_stats {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+  .stats {
+    display: flex;
+    flex-flow: wrap;
+    .stat {
+      box-sizing: border-box;
+      text-align: center;
+      width: 50%;
+      padding: 60px 20px;
+      @media (min-width: $breakpoint-tablet) {
+        width: 25%;
+        padding: 120px $padding-half;
+      }
+      margin-left: 0;
+      
+      &.lightblue {
+        .circle {
+          @include border-radius(50%);
+          background: $lightblue;
+          color: $white;
+          width: 70%; /* Adjust the width to your desired size */
+          height: 0; /* Set height to 0 to allow padding-bottom trick */
+          padding-bottom: 70%; /* Set padding-bottom to maintain 1:1 aspect ratio */
+          display: flex;
+          justify-content: center;
+          align-items: center; 
+          background: $lightblue;
+          color: $white;
+          text-align: center; /* Centers the text horizontally */
+          margin: 0px auto 20px auto;
+          position: relative;
+        }
+        span.unit {
+          @include vertical-align();
+        }
+        span.description {
+          color: $lightblue
+        }
+      }
+      &.pink {
+        background: $pink;
+        span.unit {
+          color: $white;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 3px solid $white;
+        }
+        span.description {
+          color: $white;
+        }
+      }
+      &.blue{
+        background: $blue;
+        span.unit {
+          
+          color: $white;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 5px solid $white;
+        }
+        span.description {
+          color: $white;
+        }
+      }
+      span.unit {
+        
+        font: $bold 3.8rem/3.8rem $regular;
+        @media (min-width: $breakpoint-tablet) {
+          font: $bold 6.4rem/6.4rem $regular;
+        }
+        display: inline-block;
+      }
+      span.description {
+        font: $normal 1.4rem/2.0rem $regular;
+        @media (min-width: $breakpoint-tablet) {
+          font: $bold 1.8rem/2.4rem $regular;
+        }
+        display: block;
+        color: $blue;
+      }
+    }
+    &.one {
+      .stat {
+        width: 100%;
+        padding: $padding $padding-half;
+        @media (min-width: $breakpoint-tablet) {
+          width: 100%;
+          padding: 120px $padding-half;
+        }
+      }
+    }
+    &.two {
+      .stat {
+        width: 50%;
+        padding: $padding $padding-half;
+        @media (min-width: $breakpoint-tablet) {
+          width: 50%;
+          padding: 120px $padding-half;
+        }
+      }
+    }
+    &.three {
+      .stat {
+        width: 100%;
+        padding: $padding $padding-half;
+        @media (min-width: $breakpoint-tablet) {
+          width: 33.3%;
+          padding: 120px $padding-half;
+        }
+      }
+    }
+  }
+}
+
+// Square Section
+.square_section {
+  background: #F0F1F5;
+  margin: 0px auto;
+  .container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+  .square_background {
+    background-size: cover;
+    content: "";
+    height: auto;
+    min-height: 240px;
+    width: 100%;
+    @media (max-width: $breakpoint-tablet) {
+      order: 1;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      width: 50%;
+      min-height: 540px;
+    }
+  }
+  .square_content {
+    box-sizing: border-box;
+    height: auto;
+    background: #F0F1F5;
+    width: 100%;
+    @media (max-width: $breakpoint-tablet) {
+      order: 2;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      position: relative;
+      width: 50%;
+    }
+    text-align: left;
+    
+    .content {
+      padding: 30px;
+      @media (min-width: $breakpoint-tablet) {
+        @include vertical-align;
+        padding: 60px;
+      }
+      
+      p {
+        color: $blue;
+        font: $normal 1.4rem/2.6rem $regular;
+        @media (min-width: $breakpoint-laptop) {
+          font: $normal 1.6rem/3.0rem $regular;
+        }
+        @media (min-width: $breakpoint-desktop) {
+          font: $normal 1.8rem/3.2rem $regular;
+        }
+      }
+      .title {
+        padding: 0 0 10px 0;
+        @media (min-width: $breakpoint-tablet) {
+          padding: 0 0 20px 0;
+        }
+        h3 {
+          font: $xbold 3.2rem/4.2rem $regular;
+          @media (min-width: $breakpoint-tablet) {
+            font: $xbold 3.2rem/3.8rem $regular;
+          }
+          @media (min-width: $breakpoint-laptop) {
+            font: $xbold 3.8rem/4.6rem $regular;
+          }
+          margin-bottom: 0px;
+          color: $blue;
+        }
+      }
+    }
+  }
+  
+  &.right {
+    &.blue {
+      .square_content {
+        border-top: 10px solid $blue;
+        @media (min-width: $breakpoint-tablet) {
+          margin-right: -10px;
+          border-top: none;
+          border-right: 10px solid $blue;
+        }
+        
+      }
+    }
+  }
+  &.left {
+    &.blue {
+      .square_content {
+        border-top: 10px solid $blue;
+        @media (min-width: $breakpoint-tablet) {
+          margin-left: -10px;
+          border-top: none;
+          border-left: 10px solid $blue;
+        }
+      }
+    }
+  }
+  &.blue {
+    background: #F0F1F5;
+    .square_content {
+      background: #F0F1F5;
+      .content {
+        p {
+          color: $blue;
+        }
+        .title {
+          h3 {
+            color: $blue;
+          }
+        }
+        a.button {
+          border: 3px solid $blue;
+          &:hover {
+            background: $blue;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
