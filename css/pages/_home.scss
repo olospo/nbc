@@ -30,10 +30,10 @@ section.hero.home {
     @include center-align();
     font: $xbold 3.2rem/4.2rem $regular;
     @media (min-width: $breakpoint-tablet) {
-      font: $xbold 3.2rem/3.8rem $regular;
+      font: $xbold 4.2rem/4.8rem $regular;
     }
     @media (min-width: $breakpoint-laptop) {
-      font: $xbold 4.8rem/5.6rem $regular;
+      font: $xbold 5.8rem/6.6rem $regular;
     }
     color: $white;
   }

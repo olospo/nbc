@@ -249,62 +249,34 @@ add_filter('body_class', 'add_site_specific_body_class');
 
 // Custom login
 function enqueue_custom_login_styles() {
-    // Get the current site's URL
-    $site_url = site_url();
-
-    // Extract subdomain from the site's URL
-    $subdomain = explode('.', parse_url($site_url, PHP_URL_HOST))[0];
-
-    // Enqueue different stylesheets based on the subdomain
-    switch ($subdomain) {
-      case 'mhid':
-        // CSS file for main site login
-        wp_enqueue_style('mhid-login-styles', get_stylesheet_directory_uri() . '/login/mhid-login-style.css');
-        break;
-
-      case 'andyoxford':
-        // CSS file for andyoxford site login
-        wp_enqueue_style('andyoxford-login-styles', get_stylesheet_directory_uri() . '/login/andyoxford-login-style.css');
-        break;
-
-      case 'supportingearlyminds':
-        // CSS file for supportingearlyminds site login
-        wp_enqueue_style('gearlyminds-login-styles', get_stylesheet_directory_uri() . '/login/earlyminds-login-style.css');
-        break;
-
-      case 'wisdom':
-        // CSS file for wisdom site login
-        wp_enqueue_style('wisdom-login-styles', get_stylesheet_directory_uri() . '/login/wisdom-login-style.css');
-        break;
-
-      case 'yag':
-        // CSS file for yag site login
-        wp_enqueue_style('yag-login-styles', get_stylesheet_directory_uri() . '/login/yag-login-style.css');
-        break;
-        
-      case 'aim':
-        // CSS file for yag site login
-        wp_enqueue_style('aim-login-styles', get_stylesheet_directory_uri() . '/login/aim-login-style.css');
-        break;
-
-      default:
-        // Default CSS file if no specific match is found
-        wp_enqueue_style('default-login-styles', get_stylesheet_directory_uri() . '/login/mhid-login-style.css');
-        break;
-    }
+  wp_enqueue_style('mhid-login-styles', get_stylesheet_directory_uri() . '/login/login-style.css');
 }
 add_action('login_enqueue_scripts', 'enqueue_custom_login_styles');
 
 // Change login logo URL
 function custom_login_logo_url() {
-return get_bloginfo( 'url' );
+  return get_bloginfo( 'url' );
 }
 add_filter( 'login_headerurl', 'custom_login_logo_url' );
 
 function custom_login_logo_url_title() {
-return 'Default Site Title';
+return 'National Biomarker Centre';
 }
 add_filter( 'login_headertitle', 'custom_login_logo_url_title' );
+
+// Custom Colour Scheme
+function cruk_nbc_admin_color_scheme() {
+  //Get the theme directory
+  $theme_dir = get_stylesheet_directory_uri();
+
+  //CRUK NBC
+  wp_admin_css_color( 'cruk_nbc', __( 'CRUK NBC' ),
+    $theme_dir . '/css/cruk_nbc.css',
+    array( '#00007e', '#fff', '#ff0087' , '#009cee')
+  );
+}
+add_action('admin_init', 'cruk_nbc_admin_color_scheme');
+
 
 // Hook into the 'init' action
 add_action( 'init', 'custom_post_type', 0 );
@@ -324,38 +296,6 @@ function current_type_nav_class($classes, $item) {
       array_push($classes, 'current_page_parent');
 
   return $classes;
-}
-
-class childNav extends Walker_page {
-  public function start_el(&$output, $page, $depth = 0, $args = array(), $current_page = 0) {
-    if($depth)
-        $indent = str_repeat("\t", $depth);
-    else
-        $indent = '';
-    extract($args, EXTR_SKIP);
-    $css_class = array('page_item');
-    if(!empty($current_page)) {
-        $_current_page = get_page( $current_page );
-        $children = get_children('post_parent='.$page->ID);
-        if(count($children) != 0) {
-            $css_class[] = 'hasChildren';
-        }
-        if(isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors))
-            $css_class[] = 'current_page_ancestor';
-        if($page->ID == $current_page)
-            $css_class[] = 'current_page_item';
-        elseif($_current_page && $page->ID == $_current_page->post_parent)
-            $css_class[] = 'current_page_parent';
-    } elseif($page->ID == get_option('page_for_posts')) {
-        $css_class[] = 'current_page_parent';
-    }
-    $css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
-    if($page->ID == $current_page) {
-        $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
-    } else {
-        $output .= $indent .'<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $page->post_title .'</a>';
-    }
-  }
 }
 
 // Breadcrumbs
