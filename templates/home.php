@@ -5,7 +5,9 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="home hero">
   <div class="background" style="background: url(' <?php bloginfo('template_directory'); ?>/img/placeholder.jpg') center center no-repeat; background-size: cover;"></div>
-  
+  <a href="#next"><div class="next_section">
+    <img src="<?php bloginfo('template_directory'); ?>/img/arrow_down.svg" />
+  </div></a>
 </section>
 
 <div class="container">
@@ -14,7 +16,7 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </div>
 
-<section class="home_statement">
+<section class="home_statement" id="next">
   <span class="line"></span>
   <div class="container">
     <div class="eight columns">
@@ -38,10 +40,10 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
-<section class="home_stats">
+<section class="home_stats stat_section">
   <div class="container">
     <div class="stats three">
-      <div class="stat lightblue">
+      <div class="stat blue">
         <div class="circle">
           <span class="unit" data-count="6">6</span>
         </div>
@@ -53,7 +55,7 @@ while ( have_posts() ) : the_post(); ?>
         </div>
         <span class="description">Publications</span>
       </div>
-      <div class="stat lightblue">
+      <div class="stat pink">
         <div class="circle">
           <span class="unit" data-count="2" data-prefix="£" data-postfix="M">2</span>
         </div>

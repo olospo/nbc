@@ -34,15 +34,12 @@
   </div>
 </nav>
 <header class="main">
-  
   <div class="container">
     <div class="logo six columns">  
       <h1 class="site-title">
         <?php get_template_part( 'inc/logo' ); ?>
       </h1>
     </div>
-
-    
     <!-- Search -->
     <!-- <div class="search" role="search">
       <div class="search_form"><?php get_search_form(); ?></div>

@@ -1,8 +1,8 @@
-// Home
+////// Home //////
 
 // Hero
 section.hero.home {
-  height: 100vh;
+  height: 99vh;
   position: relative;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -15,17 +15,30 @@ section.hero.home {
     background-position: center bottom;
     background-size: cover;
   }
+  .next_section {
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,0);
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
 }
 
-
+// Circles
 .pink-circle, .blue-circle {
   @include border-radius(50%);
   height: 400px;
   width: 400px;
   position: absolute;
   right: 0;
-  top: -200px;
+  top: -210px;
   text-align: center;
+  
   .text {
     @include center-align();
     font: $xbold 3.2rem/4.2rem $regular;
@@ -45,7 +58,7 @@ section.hero.home {
   background: $lightblue;
 }
 
-
+// Home Statement
 section.home_statement {
   background: $bluebg;
   padding: $padding 0;
@@ -54,7 +67,7 @@ section.home_statement {
   }
   span.line {
     height: 4px;
-    width: 50%;
+    // width: 50%;
     background: $black;
     position: absolute;
   }
@@ -72,7 +85,6 @@ section.home_statement {
     }
   }
 }
-
 
 // Square Section
 .home_news, .home_video {
@@ -154,6 +166,7 @@ section.home_statement {
   }
 }
 
+// Home Research
 section.home_research {
   background: $bluebg;
   padding: $padding 0;
@@ -162,7 +175,7 @@ section.home_research {
   }
   span.line {
     height: 4px;
-    width: 50%;
+    // width: 50%;
     background: $black;
     position: absolute;
   }

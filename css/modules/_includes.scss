@@ -26,74 +26,63 @@ section.breadcrumbs + section.content_section {
       box-sizing: border-box;
       text-align: center;
       width: 50%;
-      padding: 60px 20px;
+      padding: $padding-half;
       @media (min-width: $breakpoint-tablet) {
         width: 25%;
-        padding: 120px $padding-half;
+        padding: $padding $padding-half;
       }
       margin-left: 0;
-      
-      &.lightblue {
         .circle {
           @include border-radius(50%);
-          background: $lightblue;
-          color: $white;
-          width: 70%; /* Adjust the width to your desired size */
+          width: 60%; /* Adjust the width to your desired size */
           height: 0; /* Set height to 0 to allow padding-bottom trick */
-          padding-bottom: 70%; /* Set padding-bottom to maintain 1:1 aspect ratio */
+          padding-bottom: 60%; /* Set padding-bottom to maintain 1:1 aspect ratio */
           display: flex;
           justify-content: center;
-          align-items: center; 
-          background: $lightblue;
-          color: $white;
+          align-items: center;
           text-align: center; /* Centers the text horizontally */
           margin: 0px auto 20px auto;
           position: relative;
         }
-        span.unit {
-          @include vertical-align();
+      &.lightblue {
+        .circle {
+          background: $lightblue;
+          color: $white;
         }
         span.description {
-          color: $lightblue
+          color: $lightblue;
         }
       }
       &.pink {
-        background: $pink;
-        span.unit {
+        .circle {
+          background: $pink;
           color: $white;
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-          border-bottom: 3px solid $white;
         }
         span.description {
-          color: $white;
+          color: $pink;
         }
       }
       &.blue{
-        background: $blue;
-        span.unit {
-          
+        .circle {
+          background: $blue;
           color: $white;
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-          border-bottom: 5px solid $white;
         }
         span.description {
-          color: $white;
+          color: $blue;
         }
       }
       span.unit {
-        
+        @include vertical-align();
         font: $bold 3.8rem/3.8rem $regular;
         @media (min-width: $breakpoint-tablet) {
-          font: $bold 6.4rem/6.4rem $regular;
+          font: $bold 8.0rem/8.0rem $regular;
         }
         display: inline-block;
       }
       span.description {
-        font: $normal 1.4rem/2.0rem $regular;
+        font: $normal 2.4rem/3.0rem $regular;
         @media (min-width: $breakpoint-tablet) {
-          font: $bold 1.8rem/2.4rem $regular;
+          font: $bold 3.8rem/4.2rem $regular;
         }
         display: block;
         color: $blue;
@@ -102,30 +91,30 @@ section.breadcrumbs + section.content_section {
     &.one {
       .stat {
         width: 100%;
-        padding: $padding $padding-half;
+        padding: $padding-half;
         @media (min-width: $breakpoint-tablet) {
           width: 100%;
-          padding: 120px $padding-half;
+          padding: $padding $padding-half;
         }
       }
     }
     &.two {
       .stat {
         width: 50%;
-        padding: $padding $padding-half;
+        padding: $padding-half;
         @media (min-width: $breakpoint-tablet) {
           width: 50%;
-          padding: 120px $padding-half;
+          padding: $padding $padding-half;
         }
       }
     }
     &.three {
       .stat {
         width: 100%;
-        padding: $padding $padding-half;
+        padding: $padding-half;
         @media (min-width: $breakpoint-tablet) {
           width: 33.3%;
-          padding: 120px $padding-half;
+          padding: $padding $padding-half;
         }
       }
     }

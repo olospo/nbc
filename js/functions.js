@@ -75,13 +75,13 @@ $(function(){
 
 var componentVisible = (function ($) {
   
-  var $components = $('section, .step');
+  var $components = $('header, footer, section, .pink-circle, .blue-circle');
 
   var componentsWaypoints = $components.waypoint({
     handler: function() {
       $(this.element).addClass("visible");
     },
-    offset: '80%'
+    offset: '90%'
   });
 
 })(jQuery);
@@ -151,7 +151,6 @@ function startCounter() {
 }
 
 var triggerAtY = $('.stat_section').offset().top - $(window).outerHeight();
-var triggerAtY = $('.home_stats').offset().top - $(window).outerHeight();
 
 $(window).on('scroll', checkInView); // Add the scroll event handler
 checkInView(); // Check if the section is in view on page load
