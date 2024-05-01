@@ -66,35 +66,6 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
-<section class="research_publications_projects">
-  <div class="container">
-    <div class="six columns">
-      <h3>Publications</h3>
-      <?php
-      $featured_posts = get_field('publications');
-      if( $featured_posts ): ?>
-          <ul>
-          <?php foreach( $featured_posts as $post ): 
-      
-              // Setup this post for WP functions (variable must be named $post).
-              setup_postdata($post); ?>
-              <li>
-                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-              </li>
-          <?php endforeach; ?>
-          </ul>
-          <?php 
-          // Reset the global post object so that the rest of the page works correctly.
-          wp_reset_postdata(); ?>
-      <?php endif; ?>
-    </div>
-    <div class="six columns">
-      <h3>Projects</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-  </div>
-</section>
-
 <?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>
