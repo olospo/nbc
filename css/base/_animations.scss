@@ -116,18 +116,18 @@ section.home_statement {
   }
 }
 
-section.home_video, section.home_news {
-  .video_background, .news_background {
+section.home_video, section.home_recruitment {
+  .video_background, .recruitment_background {
     @include fade();
   }
-  .video_content .content, .news_content .content {
+  .video_content .content, .recruitment_content .content {
     @include fade();
   }
   &.visible {
-    .video_background, .news_background {
+    .video_background, .recruitment_background {
       @include reset();
     }
-    .video_content .content, .news_content .content {
+    .video_content .content, .recruitment_content .content {
       @include reset-fade();
       transition-delay: 0.5s;
     }
@@ -145,7 +145,7 @@ section.home_stats {
       .circle {
         transition: transform 0.3s ease; 
         &:hover {
-          transform: scale(0.9);
+          transform: scale(1.1);
         }
       }
       
@@ -165,6 +165,9 @@ section.home_research {
     left: 0; /* Start from the left */
     transition: width 1s ease-in-out; /* Smooth transition effect */
   }
+  .programmes article {
+    @include fade();
+  }
   &.visible {
     h2 {
       @include reset();
@@ -172,6 +175,16 @@ section.home_research {
     }
     span.line {
       width: 50%; 
+    }
+    .programmes article {
+      @include reset();
+      @include delay-children();
+      .circle {
+        transition: transform 0.3s ease; 
+        &:hover {
+          // transform: scale(1.1);
+        }
+      }
     }
   }
 }

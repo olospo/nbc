@@ -27,7 +27,7 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="home_video">
   <div class="container">
-    <div class="video_background" style="background: url('<?php bloginfo('template_directory'); ?>/img/news.jpg') center center no-repeat; background-size: cover;"></div>
+    <div class="video_background" style="background: url('<?php bloginfo('template_directory'); ?>/img/video.png') center center no-repeat; background-size: cover;"></div>
   <div class="video_content">
     <div class="content">
       <h3>World leading translational research</h3>
@@ -40,86 +40,54 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
+<section class="home_recruitment">
+  <div class="container">
+    <div class="recruitment_content">
+      <div class="content">
+        <h3>Recruitment</h3>
+        <p>The CRUK National Biomarker Centre provides state-of-the-art facilities where researchers can further develop both their science and their careers in a highly collaborative and supportive environment. Find information about the roles we have on offer.</p>
+        <a href="#" class="button primary">Our Opportunities</a>
+      </div>
+    </div>
+    <div class="recruitment_background" style="background: url('<?php bloginfo('template_directory'); ?>/img/news.png') center center no-repeat; background-size: cover;"></div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="pink-circle">
+    <span class="text">we are beating cancer.</span>
+  </div>
+</div>
+
+<?php get_template_part( 'inc/research' ); ?>
+
 <section class="home_stats stat_section">
+  <div class="container">
+    <h2>National Biomarker Centre in numbers</h2>
+  </div>
   <div class="container">
     <div class="stats three">
       <div class="stat blue">
         <div class="circle">
-          <span class="unit" data-count="6">6</span>
+          <span class="unit" data-count="68">68</span>
         </div>
-        <span class="description">Programmes</span>
+        <span class="description">Publications</span>
       </div>
       <div class="stat lightblue">
         <div class="circle">
           <span class="unit" data-count="97">97</span>
         </div>
-        <span class="description">Publications</span>
+        <span class="description">Staff</span>
       </div>
       <div class="stat pink">
         <div class="circle">
-          <span class="unit" data-count="2" data-prefix="£" data-postfix="M">2</span>
+          <span class="unit" data-count="37">37</span>
         </div>
-        <span class="description">Funding</span>
+        <span class="description">Trainees</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="home_news">
-  <div class="container">
-  <div class="news_content">
-    <div class="content">
-      <h3>Latest News</h3>
-      <p>Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.</p>
-    </div>
-  </div>
-  <div class="news_background" style="background: url('<?php bloginfo('template_directory'); ?>/img/news.png') center center no-repeat; background-size: cover;"></div>
-  </div>
-</section>
-
-<div class="container">
-  <div class="blue-circle">
-    <span class="text">we are beating cancer.</span>
-  </div>
-</div>
-
-<section class="home_research">
-  <span class="line"></span>
-  <div class="container">
-    <h2>Our research programmes</h2>
-    <article>
-      <img scr="" />
-      <h3>Nucleic Acid Biomarkers</h3>
-    </article>
-    <article>
-      <img scr="" />
-      <h3>Translational Immunology</h3>
-    </article>
-    <article>
-      <img scr="" />
-      <h3>Rare Cells</h3>
-    </article>
-    <article>
-      <img scr="" />
-      <h3>Preclinical Pharmacology</h3>
-    </article>
-    <article>
-      <img scr="" />
-      <h3>Digital Cancer Research</h3>
-    </article>
-    <article>
-      <img scr="" />
-      <h3>Tissue Biomarkers</h3>
-    </article>
-    <article>
-      <img scr="" />
-      <h3>Bioinformatics & Biostatistics</h3>
-    </article>
-    <article>
-      <img scr="" />
-      <h3>Operations</h3>
-    </article>
-  </div>
-</section>
 <?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

@@ -1,10 +1,12 @@
 // Avenir
-$regular: 'Lato', Helvetica, Arial, sans-serif;
-$poppins: 'Poppins', Helvetica, Arial, sans-serif;
+$regular: 'Poppins', Helvetica, Arial, sans-serif;
+$progress: 'Progress', Helvetica, Arial, sans-serif;
 
 // Weights
 $light: 300;
 $normal: 400;
+$medium: 500;
+$semi: 600;
 $bold: 700;
 $xbold: 900;
 
@@ -15,7 +17,7 @@ $black: #2d2d2d;
 // IHC Colours
 $blue: #00007E;
 $lightblue: #009CEE;
-$bluebg: #CCD5F4;
+$bluebg: #CCD5F4; // #BBC7D9 - correct colour commented out
 $pink: #FF0087; // Wisdom
 
 $grey: #A5B3C4;
@@ -37,13 +39,13 @@ $padding-quarter: 15px;
 
 ::selection {
   color: $white;
-  background: $blue !important;
+  background: $pink !important;
   text-shadow: none !important;
 }
     
 ::-moz-selection {
   color: $white;
-  background: $blue;
+  background: $pink;
   text-shadow: none !important;
 }
 
@@ -80,7 +82,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: $regular;
+  font-family: $progress;
   font-kerning: normal;
   color: $black;
 }
@@ -151,28 +153,6 @@ section {
       margin-top: 0;
     }
   }
-  p.jump {
-    margin: 0 0 10px 0;
-    font: $bold 1.5rem/1.5rem $regular;
-  }
-  ul.jump {
-    margin: 0px 0 20px 0;
-    li {
-      margin: 5px;
-      display: inline-block;
-      a {
-        display: block;
-        border: 2px solid $blue;
-        font: $bold 1.5rem/1.5rem $regular;
-        padding: 8px 15px;
-        text-decoration: none;
-        &:hover {
-          background: $blue;
-          color: $white;
-        }
-      }
-    }
-  }
   article.person, {
     margin: 20px 0;
   }
@@ -180,32 +160,32 @@ section {
     margin: 10px 0;
   }
   h1, h2, h3 {
-    font-family: $regular;
+    font-family: $progress;
     color: $black;
   }
   h1 {
-    font: $xbold 3.6rem/5rem $regular;
+    font: $semi 3.6rem/5rem $progress;
     margin-bottom: 10px;
     font-size: 3.6rem;
   }
   h2 {
-    font: $xbold 2.8rem/3.6rem $regular;
+    font: $semi 2.8rem/3.6rem $progress;
     margin-bottom: 10px;
     font-size: 2.8rem;
     line-height: 3.8rem;
   }
   h3 {
-    font: $xbold 2.2rem/3.0rem $regular;
+    font: $semi 2.2rem/3.0rem $progress;
     margin-bottom: 10px;
     font-size: 2.2rem;
   }
   h4 {
-    font: $xbold 2rem/2.8rem $regular;
+    font: $semi 2rem/2.8rem $progress;
     margin-bottom: 10px;
     font-size: 2rem;
   }
   h5 {
-    font: $xbold 1.8rem/2.6rem $regular;
+    font: $semi 1.8rem/2.6rem $progress;
     margin-bottom: 10px;
     font-size: 1.8rem;
   }
@@ -389,12 +369,9 @@ section {
 }
 
 .breadcrumbs {
-  padding: 0 0 30px 0;
-  @media (min-width: $breakpoint-tablet) {
-    margin-top: -20px;
-    padding: 0 0 40px 0;
-  }
-  font: $normal 1.3rem/2.2rem $regular;
+  padding: 0 0 40px 0;
+
+  font: $normal 1.3rem/2.2rem $progress;
   text-transform: uppercase;
   letter-spacing: 1px;
   .delimiter {
@@ -403,7 +380,7 @@ section {
 }
 .nav-links {
   text-align: center;
-  font: $bold 1.6rem/2.2rem $regular;
+  font: $bold 1.6rem/2.2rem $progress;
   span.current {
     display: inline-block;
     margin: 5px;

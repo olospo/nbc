@@ -1,0 +1,92 @@
+// Research
+
+// Hero
+section.hero.research {
+  height: 520px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  .background {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+  }
+}
+
+section.research_title {
+  padding: $padding-half 0;
+  background: $pink;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  h1 {
+    color: $white;
+    padding: 35px 0;
+    margin-left: 160px;
+    margin-bottom: 0;
+  }
+  .circle {
+    @include border-radius(50%);
+    width: 120px; /* Adjust the width to your desired size */
+    height: 120px; /* Set height to 0 to allow padding-bottom trick */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centers the text horizontally */
+    position: relative;
+    background: $white;
+    cursor: pointer;
+    float: left;
+    svg {
+      width: 120px; /* Adjust the width to your desired size */
+      height: 120px; /* Set height to 0 to allow padding-bottom trick */
+    }
+  }
+}
+
+section.post.research {
+  border-bottom: 3px solid $black;
+  background: #f9f7f7;
+  padding: 40px 0;
+  aside {
+    h3 {
+      border-bottom: 3px solid $black;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+    ul {
+      li {
+        list-style: none;
+        padding-left: 0em; 
+        &::before {
+          content: "\2022"; /* Unicode character for bullet */
+          color: $pink; /* Your desired color */
+          display: inline-block;
+          width: 1.2em; /* Adjust as needed */
+          margin-left: -1em; /* Negative margin to overlap text */
+        }
+        &.current {
+          a {
+            color: $pink;
+            text-decoration: none;
+          }
+        }
+        a {
+          color: $black;
+          &:hover {
+            color: $pink;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.research_publications_projects {
+  padding: 40px 0;
+}

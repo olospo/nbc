@@ -1,0 +1,58 @@
+{
+    "key": "group_6628e412d4ccc",
+    "title": "Research",
+    "fields": [
+        {
+            "key": "field_6628e41248214",
+            "label": "Research Programme",
+            "name": "link_to_research_programme",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Link Publication to Research Programme\/s",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "research"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": "",
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "elements": [
+                "featured_image"
+            ],
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_6628eaaa5e388"
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "publication"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1713957760
+}

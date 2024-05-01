@@ -1,6 +1,7 @@
 // main.scss
 @import 'base/skeleton'; // CSS Skeleton
 @import 'base/reset'; // CSS Resets
+@import 'base/fonts'; // Fonts
 @import 'base/mixins'; // Mixins
 @import 'base/general'; // General styles
 @import 'base/buttons'; // Buttons
@@ -13,4 +14,5 @@
 
 // Pages
 @import 'pages/home'; // Home
+@import 'pages/research'; // Research
 @import 'pages/news'; // News

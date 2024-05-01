@@ -2,7 +2,10 @@
 
 // Hero
 section.hero.home {
-  height: 99vh;
+  height: 80vh;
+  @media (min-width: $breakpoint-tablet) {
+    height: 99vh;
+  }
   position: relative;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -16,11 +19,15 @@ section.hero.home {
     background-size: cover;
   }
   .next_section {
-    padding: 10px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%,0);
+    display: none;
+    @media (min-width: $breakpoint-tablet) {
+      display: block;
+      padding: 10px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%,0);
+    }
     svg {
       path {
         fill: $white;
@@ -32,21 +39,34 @@ section.hero.home {
 // Circles
 .pink-circle, .blue-circle {
   @include border-radius(50%);
-  height: 400px;
-  width: 400px;
+  height: 200px;
+  width: 200px;
   position: absolute;
   right: 0;
-  top: -210px;
+  top: -110px;
   text-align: center;
+  @media (min-width: $breakpoint-tablet) {
+    height: 300px;
+    width: 300px;
+    top: -150px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    height: 400px;
+    width: 400px;
+    top: -210px;
+  }
   
   .text {
     @include center-align();
-    font: $xbold 3.2rem/4.2rem $regular;
+    font: $semi 3.2rem/4.2rem $progress;
     @media (min-width: $breakpoint-tablet) {
-      font: $xbold 4.2rem/4.8rem $regular;
+      font: $semi 4.2rem/4.8rem $progress;
     }
     @media (min-width: $breakpoint-laptop) {
-      font: $xbold 5.8rem/6.6rem $regular;
+      font: $semi 4.2rem/4.8rem $progress;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      font: $semi 5.8rem/6.6rem $progress;
     }
     color: $white;
   }
@@ -73,21 +93,25 @@ section.home_statement {
   }
   h2 {
     display: inline-block;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding: 0;
+    margin: 0;
     color: $black;
-    font: $xbold 3.2rem/4.2rem $regular;
+    font: $semi 2.8rem/3.8rem $progress;
     @media (min-width: $breakpoint-tablet) {
-      font: $xbold 3.2rem/3.8rem $regular;
+      font: $semi 3.2rem/4.0rem $progress;
+      margin-bottom: 20px
     }
     @media (min-width: $breakpoint-laptop) {
-      font: $xbold 4.8rem/5.6rem $regular;
+      font: $semi 4.0rem/5.0rem $progress;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      font: $semi 4.8rem/6.0rem $progress;
     }
   }
 }
 
 // Square Section
-.home_news, .home_video {
+section.home_video {
   background: $blue;
   margin: 0px auto;
   .container {
@@ -99,7 +123,7 @@ section.home_statement {
       flex-direction: row;
     }
   }
-  .news_background, .video_background {
+  .video_background {
     background-size: cover;
     content: "";
     height: auto;
@@ -113,7 +137,7 @@ section.home_statement {
       min-height: 560px;
     }
   }
-  .news_content, .video_content {
+  .video_content {
     box-sizing: border-box;
     height: auto;
     background: $blue;
@@ -137,15 +161,15 @@ section.home_statement {
         padding: 60px;
       }
       h3 {
-        font: $bold 2.0rem/3.0rem $regular;
+        font: $semi 2.0rem/3.0rem $progress;
         @media (min-width: $breakpoint-tablet) {
-          font: $xbold 2.4rem/3.2rem $regular;
+          font: $semi 2.4rem/3.2rem $progress;
         }
         @media (min-width: $breakpoint-laptop) {
-          font: $xbold 2.8rem/3.6rem $regular;
+          font: $semi 2.8rem/3.6rem $progress;
         }
         @media (min-width: $breakpoint-desktop) {
-          font: $xbold 3.4rem/4.0rem $regular;
+          font: $semi 3.8rem/4.4rem $progress;
         }
         margin-bottom: 20px;
         color: $white;
@@ -159,7 +183,85 @@ section.home_statement {
           
         }
         @media (min-width: $breakpoint-desktop) {
-          font: $normal 1.7rem/3.0rem $regular;
+          font: $normal 1.8rem/3.0rem $regular;
+        }
+      }
+    }
+  }
+}
+section.home_recruitment {
+  background: $white;
+  margin: 0px auto;
+  .container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+  .recruitment_background {
+    background-size: cover;
+    content: "";
+    height: auto;
+    min-height: 240px;
+    width: 100%;
+    @media (max-width: $breakpoint-tablet) {
+      order: 2;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      width: 50%;
+      min-height: 560px;
+    }
+  }
+  .recruitment_content {
+    box-sizing: border-box;
+    height: auto;
+    background: $white;
+    width: 100%;
+    @media (max-width: $breakpoint-tablet) {
+      order: 1;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      position: relative;
+      width: 50%;
+    }
+    text-align: left;
+    
+    .content {
+      padding: 30px;
+      @media (min-width: $breakpoint-tablet) {
+        @include vertical-align;
+        padding: 40px;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        padding: 60px;
+      }
+      h3 {
+        font: $semi 2.0rem/3.0rem $progress;
+        @media (min-width: $breakpoint-tablet) {
+          font: $semi 2.4rem/3.2rem $progress;
+        }
+        @media (min-width: $breakpoint-laptop) {
+          font: $semi 2.8rem/3.6rem $progress;
+        }
+        @media (min-width: $breakpoint-desktop) {
+          font: $semi 3.8rem/4.4rem $progress;
+        }
+        margin-bottom: 20px;
+        color: $black;
+      }
+      p {
+        color: $black;
+        font: $normal 1.4rem/2.4rem $regular;
+        margin-bottom: 20px;
+        @media (min-width: $breakpoint-laptop) {
+          font: $normal 1.6rem/2.6rem $regular;
+          
+        }
+        @media (min-width: $breakpoint-desktop) {
+          font: $normal 1.8rem/3.0rem $regular;
         }
       }
     }
@@ -184,12 +286,75 @@ section.home_research {
     padding-bottom: 10px;
     margin-bottom: 20px;
     color: $black;
-    font: $xbold 3.2rem/4.2rem $regular;
+    font: $semi 3.2rem/4.2rem $progress;
     @media (min-width: $breakpoint-tablet) {
-      font: $xbold 3.2rem/3.8rem $regular;
+      font: $semi 3.2rem/3.8rem $progress;
     }
     @media (min-width: $breakpoint-laptop) {
-      font: $xbold 4.8rem/5.6rem $regular;
+      font: $semi 4.8rem/5.6rem $progress;
+    }
+  }
+  .programmes {
+    display: flex;
+    flex-flow: wrap;
+    margin-top: $padding-half;
+    article {
+      width: 50%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 10px;
+      @media (min-width: $breakpoint-tablet) {
+        width: 33%;
+        padding: $padding-half;
+      }
+      @media (min-width: $breakpoint-laptop) {
+        width: 33%;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        width: 25%;
+      }
+      h3 {
+        font: $medium 1.8rem/2.4rem $progress;
+        @media (min-width: $breakpoint-tablet) {
+          font: $medium 2.2rem/3.2rem $progress;
+        }
+        @media (min-width: $breakpoint-laptop) {
+          font: $medium 2.8rem/3.6rem $progress;
+        }
+      }
+      .circle {
+        @include border-radius(50%);
+        width: 120px; /* Adjust the width to your desired size */
+        height: 120px; /* Set height to 0 to allow padding-bottom trick */
+        @media (min-width: $breakpoint-tablet) {
+          width: 180px;
+          height: 180px;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Centers the text horizontally */
+        margin: 0px auto 20px auto;
+        position: relative;
+        background: $white;
+        cursor: pointer;
+        &:hover {
+          background: $pink;
+          svg {
+            g, path, circle {
+              fill: $white;
+            }
+          }
+        }
+      }
+      img, svg {
+        width: 120px; /* Adjust the width to your desired size */
+        height: 120px; /* Set height to 0 to allow padding-bottom trick */
+        @media (min-width: $breakpoint-tablet) {
+          width: 180px;
+          height: 180px;
+        }
+      }
     }
   }
 }

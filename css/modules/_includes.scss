@@ -15,9 +15,18 @@ section.breadcrumbs + section.content_section {
 
 // Stat Section
 .stat_section, .home_stats {
-  .container {
-    width: 100%;
-    padding: 0;
+  h2 {
+    padding-top: $padding;
+    display: block;
+    text-align: center;
+    color: $black;
+    font: $medium 3.2rem/4.2rem $progress;
+    @media (min-width: $breakpoint-tablet) {
+      font: $medium 3.2rem/3.8rem $progress;
+    }
+    @media (min-width: $breakpoint-laptop) {
+      font: $medium 4.8rem/5.6rem $progress;
+    }
   }
   .stats {
     display: flex;
@@ -32,18 +41,18 @@ section.breadcrumbs + section.content_section {
         padding: $padding $padding-half;
       }
       margin-left: 0;
-        .circle {
-          @include border-radius(50%);
-          width: 60%; /* Adjust the width to your desired size */
-          height: 0; /* Set height to 0 to allow padding-bottom trick */
-          padding-bottom: 60%; /* Set padding-bottom to maintain 1:1 aspect ratio */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center; /* Centers the text horizontally */
-          margin: 0px auto 20px auto;
-          position: relative;
-        }
+      .circle {
+        @include border-radius(50%);
+        width: 60%; /* Adjust the width to your desired size */
+        height: 0; /* Set height to 0 to allow padding-bottom trick */
+        padding-bottom: 60%; /* Set padding-bottom to maintain 1:1 aspect ratio */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Centers the text horizontally */
+        margin: 0px auto 20px auto;
+        position: relative;
+      }
       &.lightblue {
         .circle {
           background: $lightblue;
@@ -73,16 +82,25 @@ section.breadcrumbs + section.content_section {
       }
       span.unit {
         @include vertical-align();
-        font: $bold 3.8rem/3.8rem $regular;
+        font: $semi 6.0rem/6.0rem $progress;
         @media (min-width: $breakpoint-tablet) {
-          font: $bold 8.0rem/8.0rem $regular;
+          font: $semi 4.0rem/4.0rem $progress;
+        }
+        @media (min-width: $breakpoint-laptop) {
+          font: $semi 6.0rem/6.0rem $progress;
+        }
+        @media (min-width: $breakpoint-desktop) {
+          font: $semi 8.0rem/8.0rem $progress;
         }
         display: inline-block;
       }
       span.description {
-        font: $normal 2.4rem/3.0rem $regular;
+        font: $medium 2.4rem/3.0rem $progress;
         @media (min-width: $breakpoint-tablet) {
-          font: $bold 3.8rem/4.2rem $regular;
+          font: $medium 3.2rem/3.6rem $progress;
+        }
+        @media (min-width: $breakpoint-laptop) {
+          font: $medium 3.8rem/4.2rem $progress;
         }
         display: block;
         color: $blue;
@@ -176,7 +194,7 @@ section.breadcrumbs + section.content_section {
           font: $normal 1.6rem/3.0rem $regular;
         }
         @media (min-width: $breakpoint-desktop) {
-          font: $normal 1.8rem/3.2rem $regular;
+          font: $normal 2.0rem/3.2rem $regular;
         }
       }
       .title {

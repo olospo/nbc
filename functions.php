@@ -3,6 +3,8 @@
 function theme_setup() {
   // Menus
   register_nav_menu( 'main', 'Main Menu' );
+  register_nav_menu( 'footer', 'Footer Menu' );
+  register_nav_menu( 'research', 'Research Footer Menu' );
   // RSS Feed
   add_theme_support( 'automatic-feed-links' );
   // Thumbnails
@@ -43,27 +45,6 @@ function my_deregister_scripts() {
  wp_dequeue_script( 'wp-embed' );
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
-
-// Options Page
-
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> true,
-		'menu_position'       => 20,
-	));
-
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Settings',
-		'menu_title'	=> 'Settings',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-}
 
 // Excerpt Length
 function excerpt_length($length) {
@@ -149,104 +130,6 @@ function remove_page_from_query_string($query_string)
     return $query_string;
 }
 
-// Remove Menu Items 
-function remove_menus(){
-  // remove_menu_page( 'tools.php' );                  //Tools
-}
-add_action( 'admin_menu', 'remove_menus' );
-
-function custom_post_type() {
-  // Resources Post Type
-  $labels = array(
-    'name'                => _x( 'Resource', 'Post Type General Name', 'text_domain' ),
-    'singular_name'       => _x( 'Resource', 'Post Type Singular Name', 'text_domain' ),
-    'menu_name'           => __( 'Resources', 'text_domain' ),
-    'all_items'           => __( 'All Resources', 'text_domain' ),
-    'view_item'           => __( 'View Resource', 'text_domain' ),
-    'add_new_item'        => __( 'Add New Resource', 'text_domain' ),
-    'add_new'             => __( 'Add New', 'text_domain' ),
-    'edit_item'           => __( 'Edit Resource', 'text_domain' ),
-    'update_item'         => __( 'Update Resource', 'text_domain' ),
-    'search_items'        => __( 'Search Resources', 'text_domain' ),
-    'not_found'           => __( 'Not found', 'text_domain' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
-  );
-  $args = array(
-    'label'               => __( 'Resource', 'text_domain' ),
-    'description'         => __( 'IHC Resources', 'text_domain' ),
-    'labels'              => $labels,
-    'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom fields', 'excerpt' ),
-    'hierarchical'        => false,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => 26,
-    'menu_icon'           => 'dashicons-editor-alignleft',
-    'can_export'          => true,
-    'has_archive'         => true,
-    'exclude_from_search' => false,
-    'publicly_queryable'  => true,
-    'capability_type'     => 'post',
-  );
-  register_post_type( 'resource', $args );
-  
-}
-// Ensure the custom post type registration runs during the appropriate action
-add_action( 'init', 'custom_post_type' );
-
-// Add unique body class based on the current site ID
-function add_site_specific_body_class($classes) {
-  // Get the current site ID
-  $current_site_id = get_current_blog_id();
-
-  // Define custom body class based on site ID
-  switch ($current_site_id) {
-    case 1:
-      // Body class for main site
-      $classes[] = 'main-site';
-      break;
-
-    case 2:
-      // Body class for subsite 1
-      $classes[] = 'subsite-1';
-      break;
-
-    case 3:
-      // Body class for subsite 2
-      $classes[] = 'subsite-2';
-      break;
-
-    case 4:
-      // Body class for subsite 3
-      $classes[] = 'subsite-3';
-      break;
-
-    case 5:
-      // Body class for subsite 4
-      $classes[] = 'subsite-4';
-      break;
-      
-    case 6:
-      // Body class for subsite 5
-      $classes[] = 'subsite-5';
-      break;
-
-    // Add more cases for additional subsites as needed
-
-    default:
-      // Default body class if no specific match is found
-      $classes[] = 'default-site';
-      break;
-  }
-
-  return $classes;
-}
-
-// Hook the function into the body_class filter
-add_filter('body_class', 'add_site_specific_body_class');
-
 // Custom login
 function enqueue_custom_login_styles() {
   wp_enqueue_style('mhid-login-styles', get_stylesheet_directory_uri() . '/login/login-style.css');
@@ -277,26 +160,26 @@ function cruk_nbc_admin_color_scheme() {
 }
 add_action('admin_init', 'cruk_nbc_admin_color_scheme');
 
-
-// Hook into the 'init' action
-add_action( 'init', 'custom_post_type', 0 );
-
 // Page Excerpt support
 add_post_type_support( 'page', 'excerpt' );
 
-// CPT Menu Item
-add_filter('nav_menu_css_class', 'current_type_nav_class', 10, 2);
-function current_type_nav_class($classes, $item) {
-  // Get post_type for this post
-  $post_type = get_query_var('post_type');
-
-  // Go to Menus and add a menu class named: {custom-post-type}-menu-item
-  // This adds a 'current_page_parent' class to the parent menu item
-  if( in_array( $post_type.'-menu-item', $classes ) )
-      array_push($classes, 'current_page_parent');
-
-  return $classes;
+function add_current_menu_class_to_careers($classes, $item) {
+    // Check if the menu item links to the "Careers" archive page
+    if (is_post_type_archive('research') && $item->title == 'Research') {
+        $classes[] = 'current-menu-item';
+    }
+    // Check if the menu item represents a single "Careers" post
+    if (is_singular('research') && get_post_type() == 'research') {
+        // Retrieve the URL of the "Careers" archive page
+        $careers_archive_link = get_post_type_archive_link('research');
+        // Check if the current menu item links to the "Careers" archive page
+        if ($item->url == $careers_archive_link) {
+            $classes[] = 'current-menu-item';
+        }
+    }
+    return $classes;
 }
+add_filter('nav_menu_css_class', 'add_current_menu_class_to_careers', 10, 2);
 
 // Breadcrumbs
 function breadcrumbs() {
@@ -433,14 +316,6 @@ function breadcrumbs() {
  
   }
 }
-
-
-function tg_include_custom_post_types_in_search_results( $query ) {
-  if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
-      $query->set( 'post_type', array( 'post', 'page' ) );
-  }
-}
-add_action( 'pre_get_posts', 'tg_include_custom_post_types_in_search_results' );
 
 // Convert number to their word equivalent 
 function number_to_word($number) {
