@@ -121,6 +121,7 @@ section.research-team {
     align-items: center;
     flex-wrap: wrap;
     .team-thumbnail {
+      margin-bottom: 20px;
       width: 50%;
       @media (min-width: $breakpoint-tablet) {
         width: 20%;
