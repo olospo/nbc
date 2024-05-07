@@ -122,7 +122,7 @@ section.research-team {
     flex-wrap: wrap;
     .team-thumbnail {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       width: 50%;
       @media (min-width: $breakpoint-tablet) {
         width: 20%;
@@ -133,7 +133,7 @@ section.research-team {
       }
       h4 {
         margin-bottom: 5px;
-        font: $medium 2.0rem/2.4rem $progress;
+        font: $medium 1.8rem/2.4rem $progress;
         color: $blue;
       }
       p {
