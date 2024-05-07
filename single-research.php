@@ -70,7 +70,7 @@ while ( have_posts() ) : the_post(); ?>
 <section class="research-team">
   <div class="container">
     <div class="row">
-      <h3>Research Programme Team</h3>
+      <h3>Team</h3>
     </div>
     <div class="team">
       <div class="team-thumbnail">
