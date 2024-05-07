@@ -67,40 +67,44 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
+<?php // Get the team members
+$team_members = get_field('team_members'); if ($team_members) { ?>
 <section class="research-team">
   <div class="container">
     <div class="row">
       <h3>Team</h3>
     </div>
     <div class="team">
-      <div class="team-thumbnail">
-        <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png">
-        <h4>Person Name</h4>
-        <p>Job Title</p>
-      </div>
-      <div class="team-thumbnail">
-        <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png">
-        <h4>Person Name</h4>
-        <p>Job Title</p>
-      </div>
-      <div class="team-thumbnail">
-        <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png">
-        <h4>Person Name</h4>
-        <p>Job Title</p>
-      </div>
-      <div class="team-thumbnail">
-        <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png">
-        <h4>Person Name</h4>
-        <p>Job Title</p>
-      </div>
-      <div class="team-thumbnail">
-        <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png">
-        <h4>Person Name</h4>
-        <p>Job Title</p>
-      </div>
+      <?php // Loop through each team member
+        foreach ($team_members as $member) {
+            // Get the member's post ID
+            $post_id = $member->ID;
+            
+            // Get the member's name (post title)
+            $name = get_the_title($post_id);
+            
+            // Get the member's job title (custom field)
+            $job_title = get_post_meta($post_id, 'job_title', true);
+            
+            // Get the member's featured image
+            $image = get_the_post_thumbnail_url($post_id, 'thumbnail');
+            
+            // If there is no featured image, use the default image
+            if (!$image) {
+                $image = get_template_directory_uri() . '/img/default-team.png';
+            }
+            ?>
+            <div class="team-thumbnail">
+                <img src="<?php echo esc_url($image); ?>">
+                <h4><?php echo esc_html($name); ?></h4>
+                <p><?php echo esc_html($job_title); ?></p>
+            </div>
+            <?php
+        } ?>
     </div>
   </div>
 </section>
+<?php } ?>
 
 <?php endwhile; // end of the loop. ?>
 
