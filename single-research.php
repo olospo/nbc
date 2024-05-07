@@ -39,7 +39,6 @@ while ( have_posts() ) : the_post(); ?>
       </div>
       <aside class="three columns">
         <div class="team-lead">
-          <h3>Team Lead</h3>
           <?php
           $team_lead = get_field('team_lead');
           if ($team_lead): ?>
@@ -47,20 +46,20 @@ while ( have_posts() ) : the_post(); ?>
               <div class="team-lead-thumbnail">
                 <?php echo get_the_post_thumbnail($team_lead->ID, 'large-thumb'); ?>
                 <h4><?php echo esc_html($team_lead->post_title); ?></h4>
-                <p>Job Title</p>
+                <p>Team lead</p>
               </div>
               <?php else: ?>
               <div class="team-lead-thumbnail">
                 <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png" alt="<?php echo esc_html($team_lead->post_title); ?>">
                 <h4><?php echo esc_html($team_lead->post_title); ?></h4>
-                <p>Job Title</p>
+                <p>Team lead</p>
               </div>
             <?php endif; ?>
           <?php endif; ?>
         </div>
         <div class="research-buttons">
           <a href="#" class="button filled black">Publications</a>
-          <a href="#" class="button filled">Projects</a>
+          <a href="#" class="button filled">Areas of Interest</a>
         </div>
       </aside>
     </div>
