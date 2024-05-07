@@ -64,11 +64,12 @@
     "supports": [
         "title",
         "editor",
-        "thumbnail"
+        "thumbnail",
+        "custom-fields"
     ],
     "taxonomies": "",
-    "has_archive": false,
-    "has_archive_slug": "",
+    "has_archive": true,
+    "has_archive_slug": "Publication",
     "rewrite": {
         "permalink_rewrite": "post_type_key",
         "with_front": "1",
@@ -81,5 +82,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1713955717
+    "modified": 1714988470
 }

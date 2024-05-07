@@ -3,12 +3,12 @@
     "title": "Research",
     "fields": [
         {
-            "key": "field_6628e41248214",
-            "label": "Research Programme",
-            "name": "link_to_research_programme",
+            "key": "field_6638a0cd3e659",
+            "label": "Research Icon",
+            "name": "icon",
             "aria-label": "",
-            "type": "relationship",
-            "instructions": "Link Publication to Research Programme\/s",
+            "type": "image",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,24 +16,16 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "research"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": "",
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": [
-                "featured_image"
-            ],
-            "bidirectional": 1,
-            "bidirectional_target": [
-                "field_6628eaaa5e388"
-            ]
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -41,12 +33,19 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "publication"
+                "value": "research"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "research-programme"
             }
         ]
     ],
     "menu_order": 1,
-    "position": "acf_after_title",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -54,5 +53,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1713957760
+    "modified": 1714989369
 }
