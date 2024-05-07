@@ -13,11 +13,10 @@ while ( have_posts() ) : the_post(); ?>
   $icon = get_field('icon');
   if( !empty( $icon ) ):  ?>
   <div class="container">
-    <div class="eight columns">
       <div class="circle">
         <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
       </div>
-    </div>
+
   </div>
   <?php endif; ?>
 </section>
