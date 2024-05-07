@@ -21,7 +21,7 @@ header {
   z-index: 1;
   .site-title {
     color: $white;
-    margin: 20px 0px;
+    margin: 10px 0px;
     img, svg {
       max-height: 140px;
     }
@@ -38,7 +38,7 @@ nav.menu {
   }
   ul {
     position: relative; // Ensure ul has a relative positioning context
-    margin: 6% 0;
+    margin: 50px 0;
     text-align: left;
     line-height:1em;
     @media (min-width: $breakpoint-desktop) {
