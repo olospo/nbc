@@ -4,8 +4,12 @@ get_header();
 while ( have_posts() ) : the_post(); ?>
   
 <section class="research hero">
-  <div class="background" style="background: url(' <?php bloginfo('template_directory'); ?>/img/research.jpg') center center no-repeat; background-size: cover;"></div>
   <?php
+  $featured_image_id = get_post_thumbnail_id();
+  $background_image_url = wp_get_attachment_image_src($featured_image_id, 'background-img');
+  if ($background_image_url) { ?>
+  <div class="background" style="background: url('<?php echo $background_image_url[0]; ?>') center center no-repeat; background-size: cover;"></div>
+  <?php } 
   $icon = get_field('icon');
   if( !empty( $icon ) ):  ?>
   <div class="container">
