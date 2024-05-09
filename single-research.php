@@ -46,13 +46,21 @@ while ( have_posts() ) : the_post(); ?>
               <div class="team-lead-thumbnail">
                 <?php echo get_the_post_thumbnail($team_lead->ID, 'large-thumb'); ?>
                 <h4><?php echo esc_html($team_lead->post_title); ?></h4>
-                <p><?php echo get_field('job_title'); ?></p>
+                <?php // Fetching and displaying the job title using ACF
+                $job_title = get_field('job_title', $team_lead->ID); 
+                if ($job_title): ?>
+                  <p><?php echo esc_html($job_title); ?></p>
+                <?php endif; ?>
               </div>
               <?php else: ?>
               <div class="team-lead-thumbnail">
                 <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png" alt="<?php echo esc_html($team_lead->post_title); ?>">
                 <h4><?php echo esc_html($team_lead->post_title); ?></h4>
-                <p><?php echo get_field('job_title'); ?></p>
+                <?php // Fetching and displaying the job title using ACF
+                $job_title = get_field('job_title', $team_lead->ID); 
+                if ($job_title): ?>
+                  <p><?php echo esc_html($job_title); ?></p>
+                <?php endif; ?>
               </div>
             <?php endif; ?>
           <?php endif; ?>
