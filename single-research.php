@@ -46,13 +46,13 @@ while ( have_posts() ) : the_post(); ?>
               <div class="team-lead-thumbnail">
                 <?php echo get_the_post_thumbnail($team_lead->ID, 'large-thumb'); ?>
                 <h4><?php echo esc_html($team_lead->post_title); ?></h4>
-                <p>Team lead</p>
+                <p><?php echo get_field('job_title'); ?></p>
               </div>
               <?php else: ?>
               <div class="team-lead-thumbnail">
                 <img src="<?php bloginfo('template_directory'); ?>/img/default-team.png" alt="<?php echo esc_html($team_lead->post_title); ?>">
                 <h4><?php echo esc_html($team_lead->post_title); ?></h4>
-                <p>Team lead</p>
+                <p><?php echo get_field('job_title'); ?></p>
               </div>
             <?php endif; ?>
           <?php endif; ?>
