@@ -21,7 +21,7 @@ wp_footer(); ?>
     </div>
     <div class="links nine columns">
       <div class="one-third column">
-        <h5>Get in touch</h5>
+        <h5>Get in Touch</h5>
         <address>
           <?php echo $address; ?>
         </address>
