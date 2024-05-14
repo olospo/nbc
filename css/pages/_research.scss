@@ -148,6 +148,9 @@ section.research-team {
       img {
         margin: 0 auto 10px auto;
         @include border-radius(50%);
+        &.default {
+          background: $white;
+        }
       }
       h4 {
         margin-bottom: 5px;
