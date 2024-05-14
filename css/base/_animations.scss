@@ -201,6 +201,9 @@ section.research-team {
     left: 0; /* Start from the left */
     transition: width 1s ease-in-out; /* Smooth transition effect */
   }
+  .team-thumbnail {
+    @include fade();
+  }
   &.visible {
     h2 {
       @include reset();
@@ -208,6 +211,10 @@ section.research-team {
     }
     span.line {
       width: 50%; 
+    }
+    .team-thumbnail {
+      @include reset();
+      @include delay-children();
     }
   }
 }
