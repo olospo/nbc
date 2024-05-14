@@ -1,0 +1,75 @@
+section.post.contact {
+  background: #f9f7f7;
+  padding: 40px 0;
+  form {
+    .nf-form-fields-required {
+      display: none;
+    }
+    .nf-form-fields-required, .nf-error-msg {
+      font: $normal 1.4rem/2.4rem $regular;
+      @media (min-width: $breakpoint-laptop) {
+        font: $normal 1.6rem/2.6rem $regular;
+      }
+    }
+    label {
+      font: $normal 2.0rem/2.6rem $progress;
+    }
+    .nf-error.field-wrap .nf-field-element::after {
+      @include border-radius(0px 10px 10px 0px);
+    }
+    select, input, textarea {
+      font: $normal 1.8rem/2.6rem $regular;
+      @include border-radius(10px);
+      background: $white;
+      border: 1px solid #c8c8c8;
+      padding: 10px 15px;
+      &:focus {
+        outline: none;
+        border: 1px solid #002A4A;
+      }
+    }
+    input.search-submit, input[type="submit"] {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 10px 0;
+      padding: 10px 20px;
+      font: $normal 1.6rem/2.6rem $regular;
+      text-decoration: none;
+      -webkit-transition: all ease .5s;
+      -moz-transition: all ease .5s;
+      -o-transition: all ease .5s;
+      transition: all ease .5s;
+      @include border-radius(10px);
+      color: $white;
+      background: $blue;
+      border: 2px solid $blue;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        color: $white;
+        border: 2px solid $lightblue;
+        background: $lightblue;
+      }
+    }
+    
+  }
+  aside {
+    p, address {
+      font: $normal 1.4rem/2.4rem $regular;
+      @media (min-width: $breakpoint-laptop) {
+        font: $normal 1.6rem/2.6rem $regular;
+      }
+    }
+    address {
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    h3 {
+      font: $bold 1.8rem/2.6rem $progress;
+      margin-bottom: 0;
+    }
+  }
+}

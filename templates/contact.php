@@ -11,7 +11,7 @@ get_header(); ?>
   <div class="background" style="background: url(' <?php bloginfo('template_directory'); ?>/img/research.jpg') center center no-repeat; background-size: cover;"></div>
 </section>
 
-<section class="post research">
+<section class="post contact">
   <div class="container flex">
     <div class="twelve columns">
       <h1><?php the_title(); ?></h1>
@@ -20,16 +20,19 @@ get_header(); ?>
       </div>
     </div>
     <div class="row">
-      <div class="nine columns">
+      <div class="eight columns">
         <?php the_content(); ?>
       </div>
-      <aside class="three columns">
-        <h5>Get in touch</h5>
+      <aside class="four columns">
+        <h2>Get in touch</h2>
+        <h3>Address:<h3>
         <address>
           <?php echo $address; ?>
         </address>
-        <p>Email: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a><br />
-        Phone: <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
+        <h3>Email:</h3> 
+        <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+        <h3>Phone:</h3>
+        <p><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
       </aside>
     </div>
   </div>
