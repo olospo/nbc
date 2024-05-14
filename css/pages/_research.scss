@@ -143,7 +143,16 @@ section.research-team {
       margin-bottom: 40px;
       width: 50%;
       @media (min-width: $breakpoint-tablet) {
+        width: 30%;
+        padding: 0px 20px;
+      }
+      @media (min-width: $breakpoint-laptop) {
         width: 20%;
+        padding: 0px 20px;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        width: 14%;
+        padding: 0px 20px;
       }
       img {
         margin: 0 auto 10px auto;
