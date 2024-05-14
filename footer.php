@@ -35,7 +35,7 @@ wp_footer(); ?>
         <h5>Quick Links</h5>
         <ul class="links">
           <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="<?php echo get_site_url(); ?>/cookie-policy/">Cookie Policy</a></li>
         </ul>
         <?php
         // Check if at least one social icon is present
