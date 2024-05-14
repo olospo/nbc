@@ -10,10 +10,10 @@ get_header(); ?>
 <section class="post research">
   <div class="container flex">
     <div class="twelve columns">
-      <h1><?php the_title(); ?></h1>
       <div class="breadcrumbs">
         <?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
       </div>
+      <h1><?php the_title(); ?></h1>
     </div>
     <div class="row">
       <div class="twelve columns">
