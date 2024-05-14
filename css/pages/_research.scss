@@ -86,8 +86,6 @@ section.post.research {
       }
       .team-lead-thumbnail {
         img {
-          max-height: 240px;
-          max-width: 240px;
           @include border-radius(50%);
           margin: 0px auto 20px auto;
         }
