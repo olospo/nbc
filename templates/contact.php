@@ -31,8 +31,6 @@ get_header(); ?>
         </address>
         <h3>Email:</h3> 
         <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
-        <h3>Phone:</h3>
-        <p><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
       </aside>
     </div>
   </div>

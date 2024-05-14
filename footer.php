@@ -25,8 +25,7 @@ wp_footer(); ?>
         <address>
           <?php echo $address; ?>
         </address>
-        <p>Email: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a><br />
-        Phone: <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
+        <p>Email: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
       </div>
       <div class="one-third column">
         <h5>Research</h5>
