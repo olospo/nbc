@@ -136,6 +136,7 @@ section.home_video {
       width: 50%;
       min-height: 560px;
     }
+    
   }
   .video_content {
     box-sizing: border-box;
@@ -357,4 +358,10 @@ section.home_research {
       }
     }
   }
+}
+.ytp-impression-link {
+  display: none !important;
+}
+.ytp-chrome-top {
+  display: none !important;
 }

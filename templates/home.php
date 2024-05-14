@@ -3,6 +3,7 @@ get_header();
 
 while ( have_posts() ) : the_post(); ?>
 
+
 <section class="home hero">
   <div class="background" style="background: url(' <?php bloginfo('template_directory'); ?>/img/placeholder.jpg') center center no-repeat; background-size: cover;"></div>
   <a href="#next"><div class="next_section">
@@ -27,7 +28,18 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="home_video">
   <div class="container">
-    <div class="video_background" style="background: url('<?php bloginfo('template_directory'); ?>/img/video.png') center center no-repeat; background-size: cover;"></div>
+    <div class="video_background" style="position: relative; overflow: hidden; padding-top: -56.25%;">
+    <iframe 
+      id="videoFrame"
+      width="100%" 
+      height="100%" 
+      src="https://www.youtube.com/embed/G1hKzCkywM8?autoplay=0&mute=0&loop=1&controls=1&fs=0&showinfo=0&rel=0&modestbranding=1"  
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    </iframe>
+    </div>
   <div class="video_content">
     <div class="content">
       <h3>World leading translational research</h3>
@@ -36,9 +48,14 @@ while ( have_posts() ) : the_post(); ?>
       <p>Working at the interface between discovery scientists and clinical researchers to harness knowledge of tumour biology to deliver impactful tests in patient samples for better outcomes.</p>
     </div>
   </div>
-  
   </div>
 </section>
+<style>
+  .ytp-chrome-top {
+    display: none !important;
+  }
+</style>
+
 
 <section class="home_recruitment">
   <div class="container">
