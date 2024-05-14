@@ -86,17 +86,19 @@ section.post.research {
       }
       .team-lead-thumbnail {
         img {
-          height: 240px;
-          width: 240px;
-          @include border-radius(10px);
-          margin-bottom: 10px;
+          max-height: 240px;
+          max-width: 240px;
+          @include border-radius(50%);
+          margin: 0px auto 20px auto;
         }
         h4 {
+          text-align: center;
           margin-bottom: 5px;
           font: $medium 2.0rem/2.4rem $progress;
           color: $blue;
         }
         p {
+          text-align: center;
           font: $medium 1.6rem/2.4rem $progress;
         }
       }
@@ -142,6 +144,10 @@ section.research-team {
       text-align: center;
       margin-bottom: 40px;
       width: 50%;
+      @media (min-width: $breakpoint-mobile) {
+        width: 40%;
+        padding: 0px 20px;
+      }
       @media (min-width: $breakpoint-tablet) {
         width: 30%;
         padding: 0px 20px;
