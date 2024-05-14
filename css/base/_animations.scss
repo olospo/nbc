@@ -189,6 +189,29 @@ section.home_research {
   }
 }
 
+section.research-team {
+  h2 {
+    @include fade();
+  }
+  span.line {
+    height: 4px;
+    width: 0; /* Start with width 0 */
+    background: $black;
+    position: absolute;
+    left: 0; /* Start from the left */
+    transition: width 1s ease-in-out; /* Smooth transition effect */
+  }
+  &.visible {
+    h2 {
+      @include reset();
+      transition-delay: 0.5s;
+    }
+    span.line {
+      width: 50%; 
+    }
+  }
+}
+
 .pink-circle, .blue-circle {
   @include rise();
   &.visible {

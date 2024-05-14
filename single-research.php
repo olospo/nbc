@@ -65,10 +65,10 @@ while ( have_posts() ) : the_post(); ?>
             <?php endif; ?>
           <?php endif; ?>
         </div>
-        <div class="research-buttons">
+        <!-- <div class="research-buttons">
           <a href="#" class="button filled black">Publications</a>
           <a href="#" class="button filled">Areas of Interest</a>
-        </div>
+        </div> -->
       </aside>
     </div>
   </div>
@@ -77,9 +77,10 @@ while ( have_posts() ) : the_post(); ?>
 <?php // Get the team members
 $team_members = get_field('team_members'); if ($team_members) { ?>
 <section class="research-team">
+  <span class="line"></span>
   <div class="container">
     <div class="row">
-      <h3>Team</h3>
+      <h2>Team</h2>
     </div>
     <div class="team">
       <?php // Loop through each team member

@@ -109,10 +109,30 @@ section.post.research {
 
 section.research-team {
   background: $bluebg;
-  padding: 40px 0;
-  h3 {
-    font: $medium 3.2rem/4.4rem $progress;
-    margin-bottom: 40px;
+  padding: $padding-half 0;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0;
+  }
+  .container {
+    margin-top: $padding-half;
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: $padding;
+    }
+  }
+  span.line {
+    height: 4px;
+    // width: 50%;
+    background: $black;
+    position: absolute;
+  }
+  h2 {
+    color: $black;
+    font: $semi 2.8rem/3.8rem $progress;
+    margin-bottom: 20px;
+    @media (min-width: $breakpoint-tablet) {
+      font: $semi 3.6rem/4.0rem $progress;
+      margin-bottom: 60px;
+    }
   }
   .team {
     display: flex;
