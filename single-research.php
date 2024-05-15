@@ -80,7 +80,7 @@ $team_members = get_field('team_members'); if ($team_members) { ?>
   <span class="line"></span>
   <div class="container">
     <div class="row">
-      <h2>Team</h2>
+      <h2>Meet The Team</h2>
     </div>
     <div class="team">
       <?php // Loop through each team member
