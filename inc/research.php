@@ -47,7 +47,7 @@
       </article>
       <article>
         <div class="circle">
-          <a href="<?php echo get_site_url(); ?>/research/operations/"><img src="<?php bloginfo('template_directory'); ?>/img/icons/operations.svg" type="image/svg+xml"/></a>
+          <a href="<?php echo get_site_url(); ?>/about/"><img src="<?php bloginfo('template_directory'); ?>/img/icons/operations.svg" type="image/svg+xml"/></a>
         </div>
         <h3>Operations</h3>
       </article>
