@@ -14,6 +14,16 @@ body.home {
       }
     }
   }
+  a.menu-toggle {
+    span{
+      background: $blue;
+    }
+    &.open {
+      span{
+        background-color: $blue !important;
+      }
+    }
+  }
 }
 
 header {
@@ -28,24 +38,32 @@ header {
   }
 }
 
+@media (max-width: $breakpoint-laptop) {
+  header {
+    .site-title {
+      display: inline-block;
+      img, svg {
+        max-height: 80px;
+      }
+    }
+  }
+}
+
 nav.menu {
   width: 100%;
   z-index: 1;
   box-sizing: border-box;
   display: none;
-  @media (min-width: 1080px) {
+  @media (min-width: $breakpoint-laptop) {
     display: block;
   }
   ul {
     position: relative; // Ensure ul has a relative positioning context
-    margin: 50px 0;
+    margin: 5% 0;
     text-align: left;
     line-height:1em;
-    @media (min-width: $breakpoint-desktop) {
-      display: block;
-    } 
+    
     li {
-      // text-transform: uppercase;
       display: inline-block;
       a {
         font: $normal 1.8rem/2.0rem $regular;
@@ -185,10 +203,10 @@ nav.menu {
     opacity: 1;
     visibility: visible;
   }
-
+}
   a.menu-toggle {
     display: block;
-    @media (min-width: 1080px) {
+    @media (min-width: $breakpoint-laptop) {
       display: none;
     }
     height: 30px;
@@ -196,9 +214,9 @@ nav.menu {
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     position: absolute;
-    top: 35px;
-    @media (min-width: 1080px) {
-      top: 60px;
+    top: 40px;
+    @media (min-width: 800px) {
+      top: 30px;
     }
     right: 20px;
     cursor: pointer;
@@ -276,39 +294,56 @@ nav.menu {
   }
   .mobile {
     display: none;
-    top: 90px;
     overflow: scroll;
-    @media (min-width: $breakpoint-tablet) {
-      top: 166px;
-    }
+    top: 100px;
     background: $blue;
     z-index: 1000;
     width: 100%;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    &.active {
+      display: block;
+      @media (min-width: $breakpoint-laptop) {
+        display: none;
+      }
+    }
     ul {
       text-align: left;
       margin: 10px 0px;
       padding: 0px 20px;
       li {
-        
+
         text-align: left;
         display: block;
-        // margin: 10px 0px;
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           font: $normal 1.8rem/1.8rem $regular !important;
           color: $white;
-          padding: 15px 0px;
+          margin: 5px 0px;
+          padding: 10px 0px;
         }
         a {
           font: $normal 1.8rem/1.8rem $regular !important;
           @include transition(all 0.2s ease-out);
           line-height: 1.4rem;
-          display: block;
+          display: inline-block;
           color: $white;
           text-decoration: none;
-          margin: 0px 10px;
-          padding: 15px 0px;
-          margin-right: 50px;
+          margin: 5px 0px;
+          padding: 10px 0px;
+        }
+        &.current_page_item,
+        &.current-menu-item, 
+        &.current-page-ancestor, 
+        &.current-post-ancestor, 
+        &.current-menu-parent, 
+        &.current-category-ancestor, 
+        &.current_page_parent {
+          > a {
+            border-bottom: 2px solid $pink;
+            &:hover {
+              border-bottom: 2px solid $pink;
+            }
+          }
         }
         
         &.menu-item-has-children {
@@ -376,4 +411,3 @@ nav.menu {
       }
     }
   }
-}

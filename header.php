@@ -21,20 +21,18 @@
     </div>
     <nav class="menu eight columns">
     <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
-      <a class="menu-toggle mobile_menu" aria-controls="primary-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-        
-      <div class="mobile">
-        <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
-      </div>
+      
     </nav>
-    <!-- Search -->
-    <!-- <div class="search" role="search">
-      <div class="search_form"><?php get_search_form(); ?></div>
-    </div> -->
+    <a class="menu-toggle mobile_menu" aria-controls="primary-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
   </div>
 </header>
+<nav class="mobile">
+  <div class="container">
+  <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
+  </div>
+</nav>
