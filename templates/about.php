@@ -22,28 +22,6 @@ get_header(); ?>
   </div>
 </section>
 
-<section class="home_stats stat_section">
-  <div class="container">
-    <h2>National Biomarker Centre in numbers</h2>
-  </div>
-  <div class="container">
-    <div class="stats two">
-      <div class="stat blue">
-        <div class="circle">
-          <span class="unit" data-count="11">11</span>
-        </div>
-        <span class="description">PhD Students</span>
-      </div>
-      <div class="stat pink">
-        <div class="circle">
-          <span class="unit" data-count="102">102</span>
-        </div>
-        <span class="description">Staff</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>

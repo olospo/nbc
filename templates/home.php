@@ -63,7 +63,7 @@ while ( have_posts() ) : the_post(); ?>
       <div class="content">
         <h3>Recruitment</h3>
         <p>The CRUK National Biomarker Centre provides state-of-the-art facilities where researchers can further develop both their science and their careers in a highly collaborative and supportive environment. Find information about the roles we have on offer.</p>
-        <a href="#" class="button primary">Our Opportunities</a>
+        <a href="https://www.cruk.manchester.ac.uk/recruitment/candidate/searchvacancies" class="button primary" target="_blank">Our Opportunities</a>
       </div>
     </div>
     <div class="recruitment_background" style="background: url('<?php bloginfo('template_directory'); ?>/img/news.png') center center no-repeat; background-size: cover;"></div>

@@ -18,7 +18,9 @@ footer {
     img.manchester {
       max-height: 80px;
       margin-bottom: 20px;
-      margin: 0px auto;
+      @media (min-width: $breakpoint-laptop) {
+        margin: 0px auto;
+      }
     }
   }
   h5 {

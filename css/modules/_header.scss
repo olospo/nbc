@@ -42,6 +42,7 @@ header {
   header {
     .site-title {
       display: inline-block;
+      margin: 10px 0px 0px 0px;
       img, svg {
         max-height: 80px;
       }
@@ -295,7 +296,7 @@ nav.menu {
   .mobile {
     display: none;
     overflow: scroll;
-    top: 100px;
+    top: 96px;
     background: $blue;
     z-index: 1000;
     width: 100%;

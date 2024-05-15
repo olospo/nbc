@@ -372,8 +372,10 @@ section {
 }
 
 .breadcrumbs {
-  padding: 0 0 40px 0;
-
+  padding: 0 0 20px 0;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 0 40px 0;
+  }
   font: $normal 1.3rem/2.2rem $progress;
   text-transform: uppercase;
   letter-spacing: 1px;
