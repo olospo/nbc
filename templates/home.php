@@ -78,7 +78,7 @@ while ( have_posts() ) : the_post(); ?>
 
 <?php get_template_part( 'inc/research' ); ?>
 
-<section class="home_stats stat_section">
+<!-- <section class="home_stats stat_section">
   <div class="container">
     <h2>National Biomarker Centre in numbers</h2>
   </div>
@@ -104,7 +104,7 @@ while ( have_posts() ) : the_post(); ?>
       </div>
     </div>
   </div>
-</section>
+</section> --> 
 
 <?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>
