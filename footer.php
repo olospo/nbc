@@ -34,9 +34,9 @@ wp_footer(); ?>
       <div class="one-third column">
         <h5>Quick Links</h5>
         <ul class="links">
-          <li><a href="<?php echo get_site_url(); ?>/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="https://www.manchester.ac.uk/discover/privacy-information/data-protection/" target="_blank">Privacy Policy</a></li>
           <li><a href="<?php echo get_site_url(); ?>/cookie-policy/">Cookie Policy</a></li>
-          <li><a href="<?php echo get_site_url(); ?>/charitable-status/">Charitable Status</a></li>
+          <li><a href="https://www.manchester.ac.uk/discover/governance/charitable-status/" target="_blank">Charitable Status</a></li>
         </ul>
         <?php
         // Check if at least one social icon is present
