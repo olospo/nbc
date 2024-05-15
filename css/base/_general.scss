@@ -234,7 +234,8 @@ section {
       margin-left: 20px;
     }
   }
-  table {
+  table, .wp-block-table table {
+    margin-bottom: 20px;
     border: 1px solid $border;
     overflow-x: scroll;
     font: $normal 1.6rem/2.6rem $regular;
@@ -250,7 +251,7 @@ section {
       padding: 20px;
       background: $blue;
       text-align: left;
-      border-right: 1px solid $white;
+      border: 1px solid $blue;
       &:last-child {
         border-right: none;
       }
@@ -259,17 +260,19 @@ section {
     tr {
       td {
         padding: 20px;
-        border-left: 1px solid $border;
+        border: 1px solid $border;
         &:first-child {
           border-left: none;
         }
       }
       &:nth-child(odd) {
+        background: #E6EAEF;
         td {
-          background: $white-bg;
+         background: #f1f2f4;
         }
       }
       &:first-child {
+        background: $white;
         td {
           background: $white;
         }
