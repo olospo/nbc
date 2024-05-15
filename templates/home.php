@@ -86,21 +86,21 @@ while ( have_posts() ) : the_post(); ?>
     <div class="stats three">
       <div class="stat blue">
         <div class="circle">
-          <span class="unit" data-count="68">68</span>
+          <span class="unit" data-count="372">372</span>
         </div>
-        <span class="description">Publications</span>
+        <span class="description">ctDNA analysis by ddPCR delivered to GCP</span>
       </div>
       <div class="stat lightblue">
         <div class="circle">
-          <span class="unit" data-count="97">97</span>
+          <span class="unit" data-count="1703">1703</span>
         </div>
-        <span class="description">Staff</span>
+        <span class="description">Samples sequenced by NGS</span>
       </div>
       <div class="stat pink">
         <div class="circle">
-          <span class="unit" data-count="37">37</span>
+          <span class="unit" data-count="2050">2050</span>
         </div>
-        <span class="description">Trainees</span>
+        <span class="description">Samples sequenced by T7-MBD seq</span>
       </div>
     </div>
   </div>

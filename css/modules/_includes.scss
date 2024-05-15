@@ -97,10 +97,10 @@ section.breadcrumbs + section.content_section {
       span.description {
         font: $medium 2.4rem/3.0rem $progress;
         @media (min-width: $breakpoint-tablet) {
-          font: $medium 3.2rem/3.6rem $progress;
+          font: $medium 3.0rem/3.8rem $progress;
         }
         @media (min-width: $breakpoint-laptop) {
-          font: $medium 3.8rem/4.2rem $progress;
+          font: $medium 3.6rem/4.8rem $progress;
         }
         display: block;
         color: $blue;
