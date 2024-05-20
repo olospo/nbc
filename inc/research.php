@@ -1,7 +1,7 @@
 <section class="home_research">
   <span class="line"></span>
   <div class="container">
-    <h2>Our research programmes</h2>
+    <h2>Our research</h2>
     <div class="programmes">
       <article>
         <div class="circle">
