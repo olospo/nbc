@@ -33,7 +33,7 @@ while ( have_posts() ) : the_post(); ?>
       id="videoFrame"
       width="100%" 
       height="100%" 
-      src="https://www.youtube.com/watch?v=5Bdw7iZr3ac?autoplay=0&mute=0&loop=1&controls=1&fs=0&showinfo=0&rel=0&modestbranding=1"  
+      src="https://www.youtube.com/embed/5Bdw7iZr3ac?autoplay=0&mute=0&loop=1&controls=1&fs=0&showinfo=0&rel=0&modestbranding=1"  
       frameborder="0" 
       allow="autoplay; encrypted-media" 
       allowfullscreen
