@@ -83,34 +83,45 @@ $team_members = get_field('team_members'); if ($team_members) { ?>
       <h2>Meet The Team</h2>
     </div>
     <div class="team">
-      <?php // Loop through each team member
-      foreach ($team_members as $member) {
-          // Get the member's post ID
-          $post_id = $member->ID;
-          
-          // Get the member's name (post title)
-          $name = get_the_title($post_id);
-          
-          // Get the member's job title (custom field)
-          $job_title = get_post_meta($post_id, 'job_title', true);
-          
-          // Get the member's featured image
-          $image = get_the_post_thumbnail_url($post_id, 'thumbnail');
-          
-          // If there is no featured image, use the default image
-          if (!$image) {
-              $image = get_template_directory_uri() . '/img/default-team.png';
-              $image_class = 'class="default"'; // Adding the class if image is not available
-          } else {
-              $image_class = 'class="photo"'; // No class if image is available
-          }
-          ?>
+    <?php if (have_rows('team')) { // Flexible Content ?>
+      <?php while (have_rows('team')) { the_row(); ?>
+        <?php if( get_row_layout() == 'profile' ): ?>
           <div class="team-thumbnail">
-              <img src="<?php echo esc_url($image); ?>" <?php echo $image_class; ?> alt="<?php echo $name; ?>">
-              <h4><?php echo esc_html($name); ?></h4>
-              <p><?php echo esc_html($job_title); ?></p>
+              <?php
+              // Assuming 'member' is a sub field of 'team'
+              $member = get_sub_field('individual_profile'); // Get the member object from the sub field
+          
+              if ($member):
+                  // Get the member's post ID
+                  $post_id = $member->ID;
+          
+                  // Get the member's name (post title)
+                  $name = get_the_title($post_id);
+          
+                  // Get the member's job title (custom field)
+                  $job_title = get_post_meta($post_id, 'job_title', true);
+          
+                  // Get the member's featured image
+                  $image = get_the_post_thumbnail_url($post_id, 'thumbnail');
+          
+                  // If there is no featured image, use the default image
+                  if (!$image) {
+                      $image = get_template_directory_uri() . '/img/default-team.png';
+                      $image_class = 'class="default"'; // Adding the class if image is not available
+                  } else {
+                      $image_class = 'class="photo"'; // No class if image is available
+                  }
+              ?>
+                  <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($name); ?>" <?php echo $image_class; ?>>
+                  <h4><?php echo esc_html($name); ?></h4>
+                  <p><?php echo esc_html($job_title); ?></p>
+              <?php endif; ?>
           </div>
+        <?php elseif( get_row_layout() == 'heading' ): ?>
+          <h3 class="team_heading"><?php echo get_sub_field('text'); ?></h3>
+        <?php endif; ?>
       <?php } ?>
+    <?php } ?>
     </div>
   </div>
 </section>

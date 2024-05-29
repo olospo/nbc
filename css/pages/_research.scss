@@ -141,6 +141,12 @@ section.research-team {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
+    .team_heading {
+      width: 100%;
+      clear: both;
+      display: block;
+      margin-bottom: 40px; /* Add margin to separate from the thumbnails */
+    }
     .team-thumbnail {
       text-align: center;
       margin-bottom: 40px;
