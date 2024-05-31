@@ -106,7 +106,7 @@ $team_members = get_field('team_members'); if ($team_members) { ?>
           
                   // If there is no featured image, use the default image
                   if (!$image) {
-                      $image = get_template_directory_uri() . '/img/default-team.png';
+                      $image = get_template_directory_uri() . '/img/nbc-person.png';
                       $image_class = 'class="default"'; // Adding the class if image is not available
                   } else {
                       $image_class = 'class="photo"'; // No class if image is available
