@@ -234,6 +234,13 @@ section {
       margin-left: 20px;
     }
   }
+  figure {
+    figcaption {
+      font: $normal 1.6rem/2.6rem $regular;
+      margin: 0 0 20px 0;
+      background: $white;
+    }
+  }
   table, .wp-block-table table {
     margin-bottom: 20px;
     border: 1px solid $border;
