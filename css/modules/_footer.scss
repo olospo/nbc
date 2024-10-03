@@ -1,17 +1,16 @@
 // Footer
 footer {
+  position: relative;
+  overflow-wrap: break-word;
+  color: $white;
+  background: $blue;
+  text-align: left;
   font: $normal 1.4rem/2.4rem $regular;
   padding: 20px 0px;
   @media (min-width: $breakpoint-laptop) {
     padding: 60px 0px;
     font: $normal 1.6rem/2.6rem $regular;
   }
-  position: relative;
-  overflow-wrap: break-word;
-  
-  color: $white;
-  background: $blue;
-  text-align: left;
   .logo {
     img.cruk, svg.cruk {
       max-height: 120px;
@@ -29,11 +28,11 @@ footer {
     color: $white;
     font: $semi 2.2rem/3.2rem $progress;
     margin-top: 20px;
+    margin-bottom: 10px;
     @media (min-width: $breakpoint-tablet) {
       text-align: left;
       margin-top: 0;
     }
-    margin-bottom: 10px;
   }
   p, address {
     font: $normal 1.4rem/2.4rem $regular;
@@ -82,11 +81,11 @@ footer {
       margin: 0px 5px;
       a {
         svg {
+          height: auto;
           width: 30px;
           @media (min-width: $breakpoint-tablet) {
             width: 48px;
           }
-          height: auto;
           path {
             transition: all ease .3s;
             fill: $white;

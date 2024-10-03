@@ -127,7 +127,7 @@ section.home_stats {
   }
 }
 
-section.home_research {
+section.home_research, section.news_archive {
   h2 {
     @include fade();
   }

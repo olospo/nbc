@@ -67,6 +67,34 @@ function ID_from_page_name($page_name)
 	return $page_name_id;
 }
 
+function custom_menu_classes_for_cpt($classes, $item, $args) {
+  // Check if we're on the Research custom post type archive page
+  if (is_post_type_archive('research')) {
+
+    // Remove 'current_page_parent' from News menu item when viewing Research posts
+    if ($item->object == 'page' && $item->object_id == get_option('page_for_posts')) {
+      $classes = array_diff($classes, ['current_page_parent']);
+    }
+  }
+
+  // Check if we're on a single custom post type 'research' page
+  if (is_singular('research')) {
+    // Add 'current-menu-item' to the Research menu item
+    if ($item->object == 'research' && $item->type == 'post_type_archive') {
+      $classes[] = 'current-menu-item';
+    }
+    
+    // Remove 'current_page_parent' from News menu item when viewing Research posts
+    if ($item->object == 'page' && $item->object_id == get_option('page_for_posts')) {
+      $classes = array_diff($classes, ['current_page_parent']);
+    }
+  }
+
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'custom_menu_classes_for_cpt', 10, 3);
+
+
 // Pagination
 function numeric_posts_nav() {
 	if( is_singular() )
@@ -163,23 +191,6 @@ add_action('admin_init', 'cruk_nbc_admin_color_scheme');
 // Page Excerpt support
 add_post_type_support( 'page', 'excerpt' );
 
-function add_current_menu_class_to_careers($classes, $item) {
-    // Check if the menu item links to the "Careers" archive page
-    if (is_post_type_archive('research') && $item->title == 'Research') {
-        $classes[] = 'current-menu-item';
-    }
-    // Check if the menu item represents a single "Careers" post
-    if (is_singular('research') && get_post_type() == 'research') {
-        // Retrieve the URL of the "Careers" archive page
-        $careers_archive_link = get_post_type_archive_link('research');
-        // Check if the current menu item links to the "Careers" archive page
-        if ($item->url == $careers_archive_link) {
-            $classes[] = 'current-menu-item';
-        }
-    }
-    return $classes;
-}
-add_filter('nav_menu_css_class', 'add_current_menu_class_to_careers', 10, 2);
 
 // Breadcrumbs
 function breadcrumbs() {
@@ -223,7 +234,7 @@ function breadcrumbs() {
         $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
         echo $cats;
       }
-      echo sprintf($link, $homeLink . 'who-we-are/news' , 'News') . $delimiter;
+      echo sprintf($link, $homeLink . 'news' , 'News') . $delimiter;
       echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
       
  
@@ -253,7 +264,7 @@ function breadcrumbs() {
         printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
         if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
       } else {
-        echo sprintf($link, $homeLink . 'who-we-are/news' , 'News') . $delimiter;
+        echo sprintf($link, $homeLink . 'news' , 'News') . $delimiter;
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, $delimiter);
         if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);

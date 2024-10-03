@@ -2,14 +2,15 @@
 
 // Hero
 section.hero.research {
-  height: 240px;
-  @media (min-width: $breakpoint-tablet) {
-    height: 460px;
-  }
+  
   position: relative;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
+  height: 240px;
+  @media (min-width: $breakpoint-tablet) {
+    height: 460px;
+  }
   .background {
     height: 100%;
     overflow: hidden;

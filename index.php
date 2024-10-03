@@ -5,17 +5,12 @@ $sub = get_field('sub_title', $obj );
 
 get_header(); ?>
 
-<section class="hero single">
+<section class="news_archive">
+  <span class="line"></span>
   <div class="container">
-    <div class="content ten columns">
-      <h1>Updates</h1>
-      <?php if ($sub): ?><p><?php echo $sub; ?></p><?php endif; ?>
-    </div>
-  </div>
-</section>
+    <h2>Latest news</h2>
 
-<section class="archive">
-  <div class="container">
+
     <div class="twelve columns">
       <div class="news_listing">
           <?php if ( have_posts() ) : while (have_posts()) : the_post();  ?>

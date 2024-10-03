@@ -2,14 +2,14 @@
 
 // Hero
 section.hero.home {
-  height: 80vh;
-  @media (min-width: $breakpoint-tablet) {
-    height: 99vh;
-  }
   position: relative;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
+  height: 80vh;
+  @media (min-width: $breakpoint-tablet) {
+    height: 99vh;
+  }
   .background {
     height: 100%;
     overflow: hidden;
@@ -58,6 +58,7 @@ section.hero.home {
   }
   
   .text {
+    color: $white;
     @include center-align();
     font: $semi 3.2rem/4.2rem $progress;
     @media (min-width: $breakpoint-tablet) {
@@ -69,7 +70,6 @@ section.hero.home {
     @media (min-width: $breakpoint-desktop) {
       font: $semi 5.8rem/6.6rem $progress;
     }
-    color: $white;
   }
 }
 
@@ -141,6 +141,7 @@ section.home_video {
     
   }
   .video_content {
+    text-align: left;
     box-sizing: border-box;
     height: auto;
     background: $blue;
@@ -152,7 +153,6 @@ section.home_video {
       position: relative;
       width: 50%;
     }
-    text-align: left;
     
     .content {
       padding: 30px;
@@ -164,6 +164,8 @@ section.home_video {
         padding: 60px;
       }
       h3 {
+        margin-bottom: 20px;
+        color: $white;
         font: $semi 2.0rem/3.0rem $progress;
         @media (min-width: $breakpoint-tablet) {
           font: $semi 2.4rem/3.2rem $progress;
@@ -174,8 +176,6 @@ section.home_video {
         @media (min-width: $breakpoint-desktop) {
           font: $semi 3.8rem/4.4rem $progress;
         }
-        margin-bottom: 20px;
-        color: $white;
       }
       p {
         color: $white;
@@ -222,6 +222,7 @@ section.home_recruitment {
     }
   }
   .recruitment_content {
+    text-align: left;
     box-sizing: border-box;
     height: auto;
     background: $white;
@@ -233,7 +234,6 @@ section.home_recruitment {
       position: relative;
       width: 50%;
     }
-    text-align: left;
     
     .content {
       padding: 30px;
@@ -245,6 +245,8 @@ section.home_recruitment {
         padding: 60px;
       }
       h3 {
+        margin-bottom: 20px;
+        color: $black;
         font: $semi 2.0rem/3.0rem $progress;
         @media (min-width: $breakpoint-tablet) {
           font: $semi 2.4rem/3.2rem $progress;
@@ -255,8 +257,6 @@ section.home_recruitment {
         @media (min-width: $breakpoint-desktop) {
           font: $semi 3.8rem/4.4rem $progress;
         }
-        margin-bottom: 20px;
-        color: $black;
       }
       p {
         color: $black;
@@ -335,12 +335,7 @@ section.home_research {
       }
       .circle {
         @include border-radius(50%);
-        width: 120px; /* Adjust the width to your desired size */
-        height: 120px; /* Set height to 0 to allow padding-bottom trick */
-        @media (min-width: $breakpoint-tablet) {
-          width: 180px;
-          height: 180px;
-        }
+        
         display: flex;
         justify-content: center;
         align-items: center;
@@ -349,6 +344,12 @@ section.home_research {
         position: relative;
         background: $white;
         cursor: pointer;
+        width: 120px; /* Adjust the width to your desired size */
+        height: 120px; /* Set height to 0 to allow padding-bottom trick */
+        @media (min-width: $breakpoint-tablet) {
+          width: 180px;
+          height: 180px;
+        }
         &:hover {
           background: $pink;
           svg {
