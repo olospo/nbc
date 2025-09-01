@@ -75,7 +75,8 @@ section.news_archive {
   }
   article {
     border-top: 5px solid $blue;
-    margin: $padding-half 0;
+    margin-top: $padding-half;
+    margin-bottom: $padding-half;
     background: $white;
     &:nth-child(3n+4) {
       margin-left: 0;
