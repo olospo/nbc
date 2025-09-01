@@ -1,6 +1,6 @@
-// News
+// Publications
 
-section.news_archive {
+section.publication_archive {
   background: $bluebg;
   padding: 40px 0;
   @media (min-width: $breakpoint-tablet) {
@@ -25,7 +25,7 @@ section.news_archive {
       .filter-container::-webkit-scrollbar {
         display: none;  /* Hide the scrollbar */
       }
-      ul.post-filter {
+      ul.pub-filter {
         margin: 0 0 10px 0;
         li {
           list-style: none;
@@ -55,9 +55,9 @@ section.news_archive {
     }
   }
   
-      
   span.line {
     height: 4px;
+    // width: 50%;
     background: $black;
     position: absolute;
   }
@@ -74,48 +74,21 @@ section.news_archive {
     }
   }
   article {
-    border-top: 5px solid $blue;
+    border-top: 5px solid $pink;
     margin: $padding-half 0;
     background: $white;
     &:nth-child(3n+4) {
       margin-left: 0;
       clear: left;
     }
-    .image {
-      overflow: hidden;
-      margin-bottom: 20px;
-      img {
-        transition: transform .5s;
-        transform: scale(1);
-      }
-    }
-    &:hover {
-      .image {
-        img {
-          transition: transform .5s;
-          transform: scale(1.05);
-        }
-      }
-    }
     .content {
-      padding: 0 15px 15px 15px;
+      padding: 15px;
       h3 {
         margin-bottom: 10px;
       }
-      span.date {
-        font-weight: bold;
-        margin-bottom: 5px;
-        display: block;
+      p {
+        margin-bottom: 10px;
       }
     }
   }  
-}
-
-section.post.news {
-  background: #f9f7f7;
-  padding: 40px 0;
-  span.date {
-    color: $black;
-    font: $normal 1.8rem/2.8rem $progress;
-  }
 }

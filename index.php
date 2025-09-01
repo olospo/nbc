@@ -9,17 +9,20 @@ get_header(); ?>
   <span class="line"></span>
   <div class="container">
     <h2>Latest news</h2>
-
-
+    <div class="filters twelve columns">
+      <div class="filter-container">
+        <?php get_template_part('inc/news-filter'); ?>
+      </div>
+    </div>
     <div class="twelve columns">
       <div class="news_listing">
           <?php if ( have_posts() ) : while (have_posts()) : the_post();  ?>
             <?php get_template_part('inc/article'); ?>
           <?php endwhile; ?>
-        </div>
-        <div class="twelve columns">
-        <?php numeric_posts_nav(); ?>
-        </div>
+      </div>
+      <div class="twelve columns">
+      <?php numeric_posts_nav(); ?>
+      </div>
         <?php else : ?>
         <!-- No posts found -->
         <?php endif; wp_reset_query(); ?>

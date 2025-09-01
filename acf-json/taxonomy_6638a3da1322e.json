@@ -1,17 +1,17 @@
 {
     "key": "taxonomy_6638a3da1322e",
-    "title": "Research Programme",
+    "title": "Research Programmes",
     "menu_order": 0,
     "active": true,
     "taxonomy": "research-programme",
     "object_type": [
-        "publication"
+        "publications"
     ],
     "advanced_configuration": 1,
     "import_source": "",
     "import_date": "",
     "labels": {
-        "name": "Research Programme",
+        "name": "Research Programmes",
         "singular_name": "Research Programme",
         "menu_name": "Research Programme",
         "all_items": "All Research Programme",
@@ -20,17 +20,17 @@
         "update_item": "Update Research Programme",
         "add_new_item": "Add New Research Programme",
         "new_item_name": "New Research Programme Name",
+        "parent_item": "",
+        "parent_item_colon": "",
         "search_items": "Search Research Programme",
-        "popular_items": "Popular Research Programme",
-        "separate_items_with_commas": "Separate research programme with commas",
-        "add_or_remove_items": "Add or remove research programme",
-        "choose_from_most_used": "Choose from the most used research programme",
         "most_used": "",
         "not_found": "No research programme found",
         "no_terms": "No research programme",
         "name_field_description": "",
         "slug_field_description": "",
+        "parent_field_description": "",
         "desc_field_description": "",
+        "filter_by_item": "",
         "items_list_navigation": "Research Programme list navigation",
         "items_list": "Research Programme list",
         "back_to_items": "← Go to research programme",
@@ -46,9 +46,9 @@
     },
     "public": 1,
     "publicly_queryable": 1,
-    "hierarchical": 0,
+    "hierarchical": 1,
     "show_ui": 1,
-    "show_in_menu": 0,
+    "show_in_menu": 1,
     "show_in_nav_menus": 1,
     "show_in_rest": 1,
     "rest_base": "",
@@ -58,7 +58,8 @@
     "show_in_quick_edit": 1,
     "show_admin_column": 1,
     "rewrite": {
-        "permalink_rewrite": "taxonomy_key",
+        "permalink_rewrite": "custom_permalink",
+        "slug": "publication",
         "with_front": "1",
         "rewrite_hierarchical": "0"
     },
@@ -71,5 +72,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1714989895
+    "modified": 1756729058
 }

@@ -163,6 +163,22 @@ section.home_research, section.news_archive {
   }
 }
 
+section.publication_archive {
+  span.line {
+    height: 4px;
+    width: 0; /* Start with width 0 */
+    background: $black;
+    position: absolute;
+    left: 0; /* Start from the left */
+    transition: width 1s ease-in-out; /* Smooth transition effect */
+  }
+  &.visible {
+    span.line {
+      width: 50%; 
+    }
+  }
+}
+
 section.research-team {
   h2 {
     @include fade();

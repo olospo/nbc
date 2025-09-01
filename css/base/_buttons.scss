@@ -62,4 +62,16 @@
       }
     }
   }
+  &.publication {
+    padding: 5px 10px 5px 10px;
+    @include border-radius(0px);
+    color: $white;
+    border: 2px solid $blue;
+    background: $blue;
+    &:hover {
+      color: $blue;
+      border: 2px solid $blue;
+      background: transparent;
+    }
+  }
 }

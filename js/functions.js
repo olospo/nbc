@@ -143,6 +143,25 @@ function startCounter() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  var container = document.querySelector(".filter-container");
+  if (!container) return;
+  
+  var activeLink = container.querySelector("a.current");
+  if (activeLink) {
+    var offsetLeft = activeLink.offsetLeft;
+    var elementWidth = activeLink.offsetWidth;
+    var containerWidth = container.offsetWidth;
+    var currentScrollLeft = container.scrollLeft;
+    
+    // Check if the active element is fully visible.
+    // If its left edge is before the current scroll or its right edge is after the visible area, adjust scroll.
+    if (offsetLeft < currentScrollLeft || (offsetLeft + elementWidth) > (currentScrollLeft + containerWidth)) {
+      container.scrollLeft = offsetLeft - (containerWidth / 2) + (elementWidth / 2);
+    }
+  }
+});
+
 var triggerAtY = $('.stat_section').offset().top - $(window).outerHeight();
 
 $(window).on('scroll', checkInView); // Add the scroll event handler
