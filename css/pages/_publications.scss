@@ -75,7 +75,7 @@ section.publication_archive {
   }
   article {
     border-top: 5px solid $pink;
-    margin: $padding-half 0;
+    margin-top: $padding-half;
     background: $white;
     &:nth-child(3n+4) {
       margin-left: 0;
