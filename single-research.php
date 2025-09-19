@@ -65,10 +65,10 @@ while ( have_posts() ) : the_post(); ?>
             <?php endif; ?>
           <?php endif; ?>
         </div>
-        <div class="research-buttons">
+        <!-- <div class="research-buttons">
           <a href="#" class="button filled">Publications</a>
           <a href="projects" class="button filled">Projects</a>
-        </div>
+        </div> -->
       </aside>
     </div>
   </div>
