@@ -257,22 +257,50 @@ function breadcrumbs() {
       echo $before . get_the_time('Y') . $after;
  
     } elseif ( is_single() && !is_attachment() ) {
-      if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
+    if ( get_post_type() != 'post' ) {
+      $ptype = get_post_type_object( get_post_type() );
     
-        $slug = $post_type->rewrite;
-        printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
-        if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
+      // Link to CPT archive (preferred) or fallback to rewrite slug
+      if ( $ptype && $ptype->has_archive ) {
+        $ptype_url = get_post_type_archive_link( $ptype->name );
       } else {
-        echo sprintf($link, $homeLink . 'news' , 'News') . $delimiter;
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, $delimiter);
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
-        $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-        $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-        // echo $cats;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+        $slug      = $ptype && ! empty( $ptype->rewrite['slug'] ) ? $ptype->rewrite['slug'] : get_post_type();
+        $ptype_url = trailingslashit( $homeLink . $slug );
       }
+    
+      // “Research”
+      printf( $link, esc_url( $ptype_url ), esc_html( $ptype->labels->name ) );
+    
+      // If hierarchical CPT, print ancestors: “Rare Cells”, etc.
+      if ( is_post_type_hierarchical( get_post_type() ) ) {
+        echo $delimiter;
+    
+        $parents = get_post_ancestors( get_the_ID() );
+        if ( $parents ) {
+          $parents = array_reverse( $parents );
+          foreach ( $parents as $pid ) {
+            printf( $link, get_permalink( $pid ), esc_html( get_the_title( $pid ) ) );
+            echo $delimiter;
+          }
+        }
+      } else {
+        // Non-hierarchical CPTs still get a delimiter before current
+        echo $delimiter;
+      }
+    
+      if ( $showCurrent == 1 ) echo $before . get_the_title() . $after;
+    
+    } else {
+      // (your existing 'post' handling stays as-is)
+      echo sprintf($link, $homeLink . 'news' , 'News') . $delimiter;
+      $cat = get_the_category(); $cat = $cat[0];
+      $cats = get_category_parents($cat, TRUE, $delimiter);
+      if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
+      $cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
+      $cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
+      if ($showCurrent == 1) echo $before . get_the_title() . $after;
+    }
+
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       
