@@ -95,6 +95,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "research"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "default"
             }
         ]
     ],
@@ -107,5 +112,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716982689
+    "modified": 1758290423
 }
