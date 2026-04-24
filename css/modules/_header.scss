@@ -11,6 +11,19 @@ body.home {
         a {
           color: $black;
         }
+        &.menu-item-has-children, 
+        &.page_item_has_children {
+          > a {
+            background: url('../img/menu_arrow.svg') right 20px center no-repeat;
+            padding-right: 50px;
+            color: $black;
+            &:hover {
+              background: url('../img/menu_arrow.svg') right 20px center no-repeat;
+              padding-right: 50px;
+              color: $black;
+            }
+          }
+        }
       }
     }
   }
@@ -66,6 +79,8 @@ nav.menu {
     
     li {
       display: inline-block;
+      padding: 15px 10px 0px 10px;
+      margin: 0px 10px;
       a {
         font: $normal 1.8rem/2.0rem $regular;
         @include transition(all 0.2s ease-out);
@@ -73,8 +88,7 @@ nav.menu {
         display: block;
         color: $white;
         text-decoration: none;
-        padding: 15px 10px 10px 10px;
-        margin: 0px 10px;
+        padding: 10px 0 10px 0;
         &:hover {
           
           color: $white;
@@ -98,10 +112,10 @@ nav.menu {
       &.menu-item-has-children, 
       &.page_item_has_children {
         > a {
-          background: url('../img/menu_arrow.svg') right 20px center no-repeat;
+          background: url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
           padding-right: 50px;
           &:hover {
-            background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
+            background: url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
             padding-right: 50px;
             color: $white;
           }
@@ -122,9 +136,8 @@ nav.menu {
       &.current-category-ancestor.page_item_has_children, 
       &.current_page_parent.page_item_has_children {
         > a {
-          background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat; // Apply the hover background
+          background: url('../img/menu_arrow_hover.svg') right 20px center no-repeat; // Apply the hover background
           padding-right: 50px; // Ensure padding for arrow space
-          color: $white; // Text color
         }
       }
       ul {
@@ -133,6 +146,8 @@ nav.menu {
         li {
           display: block;
           border-bottom: 1px solid #c9cad1;
+          padding: 0px;
+          margin: 0px;
           &:last-child {
             border-bottom: none;
           }
@@ -141,10 +156,10 @@ nav.menu {
             margin: 0;
             background: #F0F1F5;
             color: $blue;
+            padding: 15px 15px 10px 15px;
             &:hover {
               margin: 0;
-              background: $blue;
-              color: $white;
+              color: $blue;
             }
             &.menu-item-has-children, 
             &.page_item_has_children {
@@ -152,9 +167,8 @@ nav.menu {
                 background: url('../img/menu_arrow.svg') right 20px center no-repeat;
                 padding-right: 50px;
                 &:hover {
-                  background: $blue url('../img/menu_arrow_hover.svg') right 20px center no-repeat;
+                  background: url('../img/menu_arrow.svg') right 20px center no-repeat;
                   padding-right: 50px;
-                  color: $white;
                 }
               }
             }
@@ -174,7 +188,7 @@ nav.menu {
     opacity: 0;
     visibility: hidden;
     min-width: 300px;
-    left: 0; // Align left edge with the parent item
+    left: 10px; // Align left edge with the parent item
     top: 100%; // Position the submenu just below the parent item
   }
   
@@ -362,11 +376,11 @@ nav.menu {
             top: 5px;
             margin: auto;
             padding: 20px;
-            background: url('../img/menu_arrow.svg') center center no-repeat;
+            background: url('../img/menu_arrow_hover.svg') center center no-repeat;
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
             &.open {
-              background: url('../img/menu_arrow.svg') center center no-repeat;
+              background: url('../img/menu_arrow_hover.svg') center center no-repeat;
               transform-origin: center center;
               -webkit-transform: rotate(90deg);
               transform: rotate(90deg);
@@ -380,12 +394,12 @@ nav.menu {
         }
         &.current_page_parent.menu-item-has-children {
           .sub-toggle {
-            background: url('../img/menu_arrow.svg') center center no-repeat;
+            background: url('../img/menu_arrow_hover.svg') center center no-repeat;
             transform-origin: center center;
             -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
             &.open {
-              background: url('../img/menu_arrow.svg') center center no-repeat;
+              background: url('../img/menu_arrow_hover.svg') center center no-repeat;
               transform-origin: center center;
               -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
@@ -407,7 +421,7 @@ nav.menu {
           }
           &:nth-last-child(2), &:last-child {
             a {
-              border-bottom: 1px solid #e1e1ff;
+              // border-bottom: 1px solid #e1e1ff;
             }
           }
         }
