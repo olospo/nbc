@@ -1,6 +1,10 @@
 <?php /* Template Name: Home */
 get_header();
 
+$statement = get_field('statement'); 
+$video = get_field('video_embed');
+$videoContent = get_field('video_content');
+
 while ( have_posts() ) : the_post(); ?>
 
 
@@ -21,7 +25,7 @@ while ( have_posts() ) : the_post(); ?>
   <span class="line"></span>
   <div class="container">
     <div class="eight columns">
-      <h2>Our mission is to discover, develop, validate and implement biomarkers in clinical trials that support optimised treatment of patients with cancer.</h2>
+      <h2><?php echo $statement; ?></h2>
     </div>
   </div>
 </section>
@@ -33,7 +37,7 @@ while ( have_posts() ) : the_post(); ?>
       id="videoFrame"
       width="100%" 
       height="100%" 
-      src="https://www.youtube.com/embed/5Bdw7iZr3ac?autoplay=0&mute=0&loop=1&controls=1&fs=0&showinfo=0&rel=0&modestbranding=1"  
+      src="<?php echo $video; ?>"  
       frameborder="0" 
       allow="autoplay; encrypted-media" 
       allowfullscreen
@@ -42,10 +46,7 @@ while ( have_posts() ) : the_post(); ?>
     </div>
   <div class="video_content">
     <div class="content">
-      <h3>World leading translational research</h3>
-      <p>Detecting cancer earlier, predicting treatment responses, anticipating side effects, supporting development of new personalised treatments</p>
-      <h3>A team science approach</h3>
-      <p>Working at the interface between discovery scientists and clinical researchers to harness knowledge of tumour biology to deliver impactful tests in patient samples for better outcomes.</p>
+      <?php echo $videoContent; ?>
     </div>
   </div>
   </div>
