@@ -22,6 +22,38 @@
             "placeholder": "10.1000\/182",
             "prepend": "https:\/\/www.doi.org\/",
             "append": ""
+        },
+        {
+            "key": "field_6a6a07e166beb",
+            "label": "Authors",
+            "name": "authors",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "the-author"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -42,5 +74,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1756731688
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1785333777
 }

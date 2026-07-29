@@ -115,7 +115,7 @@ section.post.research {
   }
 }
 
-section.research-team {
+section.research-team, section.publication-authors {
   background: $bluebg;
   padding: $padding-half 0;
   @media (min-width: $breakpoint-tablet) {
@@ -188,5 +188,12 @@ section.research-team {
         font: $medium 1.6rem/2.4rem $progress;
       }
     }
+  }
+}
+
+section.publication-authors {
+  padding: 40px 0;
+  .container {
+    margin-top: 20px;
   }
 }
