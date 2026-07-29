@@ -80,6 +80,10 @@ section.post.research {
   aside {
     .research-buttons {
       margin: 20px 0 0 0;
+      text-align: center;
+      a.button {
+        margin: 5px 0;
+      }
     }
     .team-lead {
       box-sizing: border-box;
