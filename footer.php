@@ -22,7 +22,7 @@ wp_footer(); ?>
     <div class="links nine columns">
       <div class="one-third column">
         <h5>Get in Touch</h5>
-        <p><a href="<a href="<?php echo get_site_url(); ?>/contact>Contact Us</a></p>
+        <p><a href="<?php echo get_site_url(); ?>/contact/">Contact Us</a></p>
         <address>
           <?php echo $address; ?>
         </address>
