@@ -16,7 +16,7 @@ jobs:
         with:
           port: 21
           protocol: ftps
-          server: termite-lon.cloudhosting.uk
+          server: ${{ secrets.SERVER_IP }}
           server-dir: public_html/wp-content/themes/nbc/
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
