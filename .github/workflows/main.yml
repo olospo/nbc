@@ -1,19 +1,16 @@
-name: Deploying to Live
-
-on:
-  push:
-    branches:
-      - main
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  build:
-    name: Deploy Site
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v6
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+      with:
           port: 21
           protocol: ftps
           server: ${{ secrets.SERVER_IP }}
