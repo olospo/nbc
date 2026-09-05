@@ -38,6 +38,38 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
+<?php
+// Get authors
+$authors = get_field('authors'); // relationship field returning post objects
+if ($authors) : ?>
+<section class="publication-authors">
+  <div class="container">
+    <h2>Authors</h2>
+    <div class="team">
+      <?php foreach ($authors as $author) :
+        $post_id = $author->ID;
+        $name = get_the_title($post_id);
+        $job_title = get_post_meta($post_id, 'job_title', true);
+        $image = get_the_post_thumbnail_url($post_id, 'thumbnail');
+
+        if (!$image) {
+          $image = get_template_directory_uri() . '/img/nbc-person.png';
+          $image_class = 'class="default"';
+        } else {
+          $image_class = 'class="photo"';
+        }
+      ?>
+        <div class="team-thumbnail">
+          <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($name); ?>" <?php echo $image_class; ?>>
+          <h4><?php echo esc_html($name); ?></h4>
+          <p><?php echo esc_html($job_title); ?></p>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
 <?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>

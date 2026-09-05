@@ -65,10 +65,14 @@ while ( have_posts() ) : the_post(); ?>
             <?php endif; ?>
           <?php endif; ?>
         </div>
-        <!-- <div class="research-buttons">
-          <a href="#" class="button filled">Publications</a>
-          <a href="projects" class="button filled">Projects</a>
-        </div> -->
+        <?php
+        $research_slug = get_post_field( 'post_name', get_the_ID() );
+        $publication_link = home_url( '/publication/' . $research_slug . '/' );
+        ?>
+        <div class="research-buttons">
+            <a href="<?php echo esc_url( $publication_link ); ?>" class="button filled">Publications</a>
+            <!-- <a href="projects" class="button filled">Projects</a> -->
+        </div>
       </aside>
     </div>
   </div>

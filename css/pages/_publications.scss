@@ -17,8 +17,8 @@ section.publication_archive {
       }
       .filter-container {
         display: flex;
-        overflow-x: auto;
-        white-space: nowrap;
+        // overflow-x: auto;
+        // white-space: nowrap;
         scroll-behavior: smooth;
         scrollbar-width: none;
       }

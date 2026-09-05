@@ -9,16 +9,5 @@
       echo '</a></p>';
     }
     ?>
-    <?php
-    $programmes = get_the_terms(get_the_ID(), 'research-programme');
-    if ($programmes && ! is_wp_error($programmes)) {
-      foreach ($programmes as $programme) {
-        $term_link = get_term_link($programme);
-        if (! is_wp_error($term_link)) {
-          echo '<a href="' . esc_url($term_link) . '" class="button publication">' . esc_html($programme->name) . '</a> ';
-        }
-      }
-    }
-    ?>
   </div>
 </article>
