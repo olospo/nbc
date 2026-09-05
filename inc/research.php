@@ -5,9 +5,9 @@
     <div class="programmes">
       <article>
         <div class="circle">
-          <a href="<?php echo get_site_url(); ?>/research/nucleic-acids-biomarkers/"><img src="<?php bloginfo('template_directory'); ?>/img/icons/nucleic.svg" type="image/svg+xml"/></a>
+          <a href="<?php echo get_site_url(); ?>/research/non-invasive-multi-omics/"><img src="<?php bloginfo('template_directory'); ?>/img/icons/nucleic.svg" type="image/svg+xml"/></a>
         </div>
-        <h3>Nucleic Acids Biomarkers</h3>
+        <h3>Non-InvasivE Multi-Omics</h3>
       </article>
       <article>
         <div class="circle">
